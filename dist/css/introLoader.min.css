@@ -1,0 +1,17 @@
+/*
+ *  jQueryIntroLoader - v1.0.0
+ *  simple intro loader animations
+ *  http://factory.brainleaf.eu/jqueryIntroLoader
+ *
+ *  Made by BRAINLEAF Communication
+ *  Under GNU/GPL License
+ */
+
+/*!
+ *  jQueryIntroLoader - v1.0.0beta
+ *  Animated intro loading pages
+ *  http://factory.brainleaf.eu/jqueryIntroLoader
+ *
+ *  Made by BRAINLEAF Communication (c)2014
+ *  Under GNU/GPL License
+ */.BL-introLoading.simpleLoader{position:fixed;top:0;right:0;bottom:0;left:0}.theme-light.BL-introLoading.simpleLoader{background:#fff}.theme-dark.BL-introLoading.simpleLoader{background:#333}.theme-fluoGreen.BL-introLoading.simpleLoader{background:#67de0f}.theme-fluoMagenta.BL-introLoading.simpleLoader{background:#ff1bff}.theme-fluoYellow.BL-introLoading.simpleLoader{background:#dcff1b}.theme-rasta.BL-introLoading.simpleLoader{background:#1baa05;background:-moz-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-webkit-gradient(linear,left top,left bottom,color-stop(32%,rgba(27,170,5,1)),color-stop(32%,rgba(242,230,7,1)),color-stop(69%,rgba(242,230,7,1)),color-stop(69%,rgba(242,230,7,1)),color-stop(69%,rgba(252,23,7,1)));background:-webkit-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-o-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-ms-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:linear-gradient(to bottom,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1baa05', endColorstr='#fc1707', GradientType=0)}
