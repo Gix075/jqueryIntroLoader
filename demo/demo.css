@@ -118,6 +118,17 @@ td {
     padding: 10px 15px;
 }
 
+.controlsButtons span {
+    cursor: pointer;
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 5px 10px;
+}
+
 footer {
     font-size: 0.8em;
     margin: 50px 0;

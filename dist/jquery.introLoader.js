@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.0.0
+ *  jQueryIntroLoader - v1.1.0
  *  simple intro loader animations
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -7,206 +7,241 @@
  *  Under GNU/GPL License
  */
 
-;(function ( $, window, document, undefined ) {
+(function($) {
 
-		
-		var pluginName = "introLoader",
-				defaults = {
-                    
-                animation: {
-                    name: 'simpleLoader',
-                    options: {
-                        effect:'fadeOut',
-                        ease: "linear",
-                        style: 'light',
-                        delayTime: 500, //delay time in milliseconds
-                        animationTime: 300,
-                        onAfter: function(){},
-                        onBefore: function(){}
-                    }
-                },    
-                    
-                spinJs: {
-                    /*
-                        Example of allowe options
-                        ----------------------------------------------------------------
-                        lines: 13, // The number of lines to draw
-                        length: 20, // The length of each line
-                        width: 10, // The line thickness
-                        radius: 30, // The radius of the inner circle
-                        corners: 1, // Corner roundness (0..1)
-                        rotate: 0, // The rotation offset
-                        direction: 1, // 1: clockwise, -1: counterclockwise
-                        color: '#000', // #rgb or #rrggbb or array of colors
-                        speed: 1, // Rounds per second
-                        trail: 60, // Afterglow percentage
-                        shadow: false, // Whether to render a shadow
-                        hwaccel: false, // Whether to use hardware acceleration
-                        className: 'spinner', // The CSS class to assign to the spinner
-                        zIndex: 2e9, // The z-index (defaults to 2000000000)
-                        top: '50%', // Top position relative to parent
-                        left: '50%' // Left position relative to parent
-                    */
-                    
+    $.introLoader = function(element, options) {
+
+    
+        var defaults = {
+
+            animation: {
+                name: 'simpleLoader',
+                options: {
+                    effect:'fadeOut',
+                    ease: "linear",
+                    style: 'light',
+                    delayTime: 500, //delay time in milliseconds
+                    animationTime: 300,
+                    fixed: true,
+                    stop: true,
+                    onAfter: function(){},
+                    onBefore: function(){}
                 }
-                    
-                    
-		};
+                    },    
 
-		// The actual plugin constructor
-		function Plugin ( element, options ) {
-				this.element = element;
-				this.settings = $.extend( true, defaults, options );
-				this._defaults = defaults;
-				this._name = pluginName;
-				this.init();
-		}
+            spinJs: {}
 
-		// Avoid Plugin.prototype conflicts
-		$.extend(Plugin.prototype, {
-				init: function () {
-						
-						console.log("jqueryIntroLoading --> start");
-                    
-                        // Global Values
-                        var thisPlugin = this;
-                        var domElement = this.element;
-                        
-                        // spinJS Options
-                        var spinOpt = {
-                            lines: this.settings.spinJs.lines, // The number of lines to draw
-                            length: this.settings.spinJs.length, // The length of each line
-                            width: this.settings.spinJs.width, // The line thickness
-                            radius: this.settings.spinJs.radius, // The radius of the inner circle
-                            corners: this.settings.spinJs.corners, // Corner roundness (0..1)
-                            rotate: this.settings.spinJs.rotate,// The rotation offset
-                            direction: this.settings.spinJs.direction,// 1: clockwise, -1: counterclockwise
-                            color: this.settings.spinJs.color, // #rgb or #rrggbb or array of colors
-                            speed: this.settings.spinJs.speed, // Rounds per second
-                            trail: this.settings.spinJs.trail, // Afterglow percentage
-                            shadow: this.settings.spinJs.shadow, // Whether to render a shadow
-                            hwaccel: this.settings.spinJs.hwaccel, // Whether to use hardware acceleration
-                            className: this.settings.spinJs.className, // The CSS class to assign to the spinner
-                            zIndex: this.settings.spinJs.zIndex, // The z-index (defaults to 2000000000)
-                            top: this.settings.spinJs.top, // Top position relative to parent
-                            left: this.settings.spinJs.left // Left position relative to parent
-                        }
-                        
-                        // animation options object
-                        var animOpt = this.settings.animation.options;
-                        
-                        switch(this.settings.animation.name) {
-                            case "simpleLoader":
-                                this.simpleLoaderAnimation(domElement,spinOpt,animOpt);
-                                break;
-                            default:
-                                this.simpleLoaderAnimation(domElement,spinOpt,animOpt);
-                                break;
-                        }
-                        
-                    
-				},
-				simpleLoaderAnimation: function (domElement,spinOpt,animOpt) {
-                    
-                    // onBefore function 
-                    animOpt.onBefore();
-                                        
-                    var styleClass = 'theme-'+ animOpt.style;
-                    $(domElement).addClass('BL-introLoading simpleLoader ' + styleClass);
-                    
-                    
-                    var markup  = '';
-                        markup += '<div id="BLintroLoadingSpinner" class="BL-introLoadingInner">';
-                        markup += '</div>';
-                    
-                    $(domElement).html(markup);
-                    
-                    var target = document.getElementById('BLintroLoadingSpinner');
-                    var spinner = new Spinner(spinOpt).spin(target);
-                    
-                    $(window).on('load', function() {
-                                                
-                        setTimeout(function() {
-                            
-                            switch(animOpt.effect) {
-                                case "fadeOut":
-                                    $(domElement).fadeOut(
-                                        animOpt.animationTime, 
-                                        animOpt.ease,
-                                        animOpt.onAfter() // onAfter function
-                                    );
-                                    break;
-                                    
-                                case "slideUp":
-                                    spinner.stop();
-                                    $(domElement).animate(
-                                        {"bottom":$(window).height()},
-                                        animOpt.animationTime, 
-                                        animOpt.ease,
-                                        function () {
-                                            $(domElement).hide();
-                                            animOpt.onAfter(); // onAfter function
-                                        }
-                                    );
-                                    break;
-                                    
-                                case "slideDown":
-                                    spinner.stop();
-                                    $(domElement).animate(
-                                        {"top":$(window).height()},
-                                        animOpt.animationTime, 
-                                        animOpt.ease,
-                                        function () {
-                                            $(domElement).hide();
-                                            animOpt.onAfter(); // onAfter function
-                                        }
-                                    );
-                                    break;
-                                    
-                                case "slideLeft":
-                                    spinner.stop();
-                                    $(domElement).animate(
-                                        {"right":$(window).width(),"left":"-100%"},
-                                        animOpt.animationTime, 
-                                        animOpt.ease,
-                                        function () {
-                                            $(domElement).hide();
-                                            animOpt.onAfter(); // onAfter function
-                                        }
-                                    );
-                                    break; 
-                                case "slideRight":
-                                    spinner.stop();
-                                    $(domElement).animate(
-                                        {"left":$(window).width(),"right":"-100%"},
-                                        animOpt.animationTime, 
-                                        animOpt.ease,
-                                        function () {
-                                            $(domElement).hide();
-                                            animOpt.onAfter(); // onAfter function
-                                        }
-                                    );
-                                    break;    
-                                default:
-                                    $(domElement).hide();
-                                    break;
+        }
+
+        
+        var plugin = this;
+
+        plugin.settings = {}
+
+        var $element = $(element),
+             element = element;   
+        
+        //Constructor
+        plugin.init = function() {
+            
+            
+            plugin.settings = $.extend(true, defaults, options);
+            
+            // spinJS Options
+            var spinOpt = {
+                lines: this.settings.spinJs.lines,
+                length: this.settings.spinJs.length, 
+                width: this.settings.spinJs.width, 
+                radius: this.settings.spinJs.radius, 
+                corners: this.settings.spinJs.corners, 
+                rotate: this.settings.spinJs.rotate,
+                direction: this.settings.spinJs.direction,
+                color: this.settings.spinJs.color, 
+                speed: this.settings.spinJs.speed,
+                trail: this.settings.spinJs.trail, 
+                shadow: this.settings.spinJs.shadow,
+                hwaccel: this.settings.spinJs.hwaccel, 
+                className: this.settings.spinJs.className,
+                zIndex: this.settings.spinJs.zIndex,
+                top: this.settings.spinJs.top, 
+                left: this.settings.spinJs.left 
+            }
+
+            // animation options object
+            var anim = plugin.settings.animation.name;
+            var animOpt = plugin.settings.animation.options;
+            var spinOpt = plugin.settings.spinJs;
+            
+            plugin.spinner = new Spinner(spinOpt).spin();
+            
+            // Choose Animation
+            switch(anim) {
+                case "simpleLoader":
+                    simpleLoaderAnimation(element,animOpt,spinOpt);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        
+        /*  
+            ==================================================
+            PUBLICS
+            ================================================== 
+        */
+        
+        plugin.stop = function() {
+            //console.log('stop --> publicCalled '+plugin.settings.animation.name);
+            switch(plugin.settings.animation.name) {
+                case "simpleLoader":
+                    simpleLoaderAnimationExit();
+                    break;
+            }
+            
+        }
+        
+        /*  
+            ==================================================
+            PRIVATES
+            ================================================== 
+        */
+        // --> simpleLoaderAnimation
+        var simpleLoaderAnimation = function(element,animOpt,spinOpt) {
+            //console.log('simpleLoaderAnimation --> privateCalled '+plugin.settings.animation.options.effect);
+            
+            // onBefore function 
+            animOpt.onBefore();  
+            
+            var styleClass = 'theme-'+ animOpt.style;
+            if (animOpt.fixed === false) {
+                $(element).addClass('absolute');
+                $(element).parent().css({'position':'relative','overflow':'hidden'});
+            }
+            $(element).addClass('introLoading simpleLoader ' + styleClass);
+            
+            var markup  = '';
+                markup += '<div id="BLintroLoadingSpinner" class="BL-introLoadingInner">';
+                markup += '</div>';
+
+            $(element).html(markup);
+            $(element).show();
+
+            var target = document.getElementById('BLintroLoadingSpinner');
+            plugin.spinner.spin(target);
+            
+            
+            if (animOpt.stop === true) {
+                simpleLoaderAnimationExit();
+            }
+        }
+        
+        var simpleLoaderAnimationExit = function() {
+            //console.log('simpleLoaderAnimationExit --> privateCalled '+plugin.settings.animation.options.effect);
+            var animOpt = plugin.settings.animation.options; 
+            setTimeout(function() {
+                           
+                switch(animOpt.effect) {
+                    case "fadeOut":
+                        $(element).fadeOut(
+                            animOpt.animationTime, 
+                            animOpt.ease,
+                            function() {
+                                $('#BLintroLoadingSpinner').remove();
+                                animOpt.onAfter() // onAfter function
                             }
-                            
-                        }, animOpt.delayTime);
-                        
-                    });
-				}
-		});
+                        );
+                        break;
 
-		$.fn[ pluginName ] = function ( options ) {
-				this.each(function() {
-						if ( !$.data( this, "plugin_" + pluginName ) ) {
-								$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
-						}
-				});
+                    case "slideUp":
+                        plugin.spinner.stop();
+                        $(element).animate(
+                            {"bottom":$(window).height()},
+                            animOpt.animationTime, 
+                            animOpt.ease,
+                            function () {
+                                $(element).hide();
+                                $('#BLintroLoadingSpinner').remove();
+                                animOpt.onAfter(); // onAfter function
+                            }
+                        );
+                        break;
 
-				// chain jQuery functions
-				return this;
-		};
+                    case "slideDown":
+                        plugin.spinner.stop();
+                        $(element).animate(
+                            {"top":$(window).height()},
+                            animOpt.animationTime, 
+                            animOpt.ease,
+                            function () {
+                                $(element).hide();
+                                $('#BLintroLoadingSpinner').remove();
+                                animOpt.onAfter(); // onAfter function
+                            }
+                        );
+                        break;
 
-})( jQuery, window, document );
+                    case "slideLeft":
+                        plugin.spinner.stop();
+                        $(element).animate(
+                            {"right":$(window).width(),"left":"-100%"},
+                            animOpt.animationTime, 
+                            animOpt.ease,
+                            function () {
+                                $(element).hide();
+                                $('#BLintroLoadingSpinner').remove();
+                                animOpt.onAfter(); // onAfter function
+                            }
+                        );
+                        break; 
+                    case "slideRight":
+                        plugin.spinner.stop();
+                        $(element).animate(
+                            {"left":$(window).width(),"right":"-100%"},
+                            animOpt.animationTime, 
+                            animOpt.ease,
+                            function () {
+                                $(element).hide();
+                                $('#BLintroLoadingSpinner').remove();
+                                animOpt.onAfter(); // onAfter function
+                            }
+                        );
+                        break;    
+                    default:
+                        $(element).hide();
+                        break;
+                }
+                
+
+            }, animOpt.delayTime);
+            
+        }
+
+        
+        plugin.init();
+
+    }
+
+    
+    $.fn.introLoader = function(options) {
+
+        
+        return this.each(function() {
+  
+            if (undefined == $(this).data('introLoader')) {
+                var plugin = new $.introLoader(this, options);
+                //console.log('PLUGIN');
+                $(this).data('introLoader', plugin);
+                
+            }else{
+                $(this).removeData('introLoader');
+                var plugin = new $.introLoader(this, options);
+                $(this).data('introLoader', plugin);
+            }
+
+        });
+
+    }
+
+})(jQuery);

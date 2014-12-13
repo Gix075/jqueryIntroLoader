@@ -12,7 +12,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script src="../dist/helpers/jquery.easing.1.3.js"></script>
         <script src="../dist/helpers/spin.min.js"></script>
-        <script src="../dist/jquery.introLoader.js"></script>
+        <script src="../src/jquery.introLoader.js"></script>
         <!-- -------------------------------------------------------- -->
 
 	</head>
@@ -20,18 +20,23 @@
 		<div id="element"></div>
         <h1>jqueryIntroLoader demopage</h1>
         <p>This is the IntroLoader demo page. Choose an animation and see it in action.</p>
+        
+        <h3>SimpleLoader Animation</h3>
         <ul>
             <li><a href="demo-default.html" title="Default Options Demo">Default Options Demo</a></li>
             <li><a href="demo-simpleloader-slideright.html" title="SimpleLoader Demo">SimpleLoader: slideRight</a></li>
             <li><a href="demo-simpleloader-slidebottom.html" title="SimpleLoader Demo">SimpleLoader: slideBottom + callback onAfter</a></li>
             <li><a href="demo-simpleloader-slideup.html" title="SimpleLoader Demo">SimpleLoader: slideUp + onBefore + callback onAfter</a></li>
         </ul>
+        <h3>New Start/Stop methods (from version 1.1.0)</h3>
+        <ul>
+            <li><a href="demo-simpleloader-startstop.html" title="Start and Stop">Manual Plugin Start/Stop Example</a></li>
+        </ul>
 
-        
         
 		<script>
 			$(document).on('ready', function() {
-				$("#element").introLoader({
+				var loader = $("#element").introLoader({
 					animation: {
                         name: 'simpleLoader',
                         options: {
@@ -53,8 +58,22 @@
                         color: '#fff', // #rgb or #rrggbb or array of colors
                     }
 				});
+                
 			});
+            
+            
 		</script>
+        
+        
+        <!-- Google Analytics -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','47727083');ga('send','pageview');
+        </script>
         
 	</body>
 </html>

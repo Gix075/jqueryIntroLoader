@@ -11,41 +11,46 @@
 /* ANIMATION : simpleLoader */
 /* ##################################################################################### */
 
-.BL-introLoading.simpleLoader {
+.introLoading.simpleLoader {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    overflow: hidden;
+}
+
+.absolute.introLoading.simpleLoader {
+    position: absolute;
 }
 
 /* --> theme: light */
-.theme-light.BL-introLoading.simpleLoader {
+.theme-light.introLoading.simpleLoader {
     background: #fff;
 }
 
 /* --> theme: dark */
-.theme-dark.BL-introLoading.simpleLoader {
+.theme-dark.introLoading.simpleLoader {
     background: #333;
 }
 
 /* --> theme: fluoGreen */
-.theme-fluoGreen.BL-introLoading.simpleLoader {
+.theme-fluoGreen.introLoading.simpleLoader {
     background: #67de0f;
 }
 
 /* --> theme: fluoMagenta */
-.theme-fluoMagenta.BL-introLoading.simpleLoader {
+.theme-fluoMagenta.introLoading.simpleLoader {
     background: #ff1bff;
 }
 
 /* --> theme: fluoYellow */
-.theme-fluoYellow.BL-introLoading.simpleLoader {
+.theme-fluoYellow.introLoading.simpleLoader {
     background: #dcff1b;
 }
 
 /* --> theme: rasta */
-.theme-rasta.BL-introLoading.simpleLoader {
+.theme-rasta.introLoading.simpleLoader {
     background: rgb(27,170,5); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(27,170,5,1) 32%, rgba(242,230,7,1) 32%, rgba(242,230,7,1) 69%, rgba(242,230,7,1) 69%, rgba(252,23,7,1) 69%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(32%,rgba(27,170,5,1)), color-stop(32%,rgba(242,230,7,1)), color-stop(69%,rgba(242,230,7,1)), color-stop(69%,rgba(242,230,7,1)), color-stop(69%,rgba(252,23,7,1))); /* Chrome,Safari4+ */

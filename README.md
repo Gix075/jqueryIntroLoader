@@ -19,6 +19,30 @@ This plugin is very easy to install and use.
 - You don't need to know jQuery to obtain cool animations!
 - It's perfect for jQuery beginners!
 
+###Use
+
+**HTML**<br>
+```html
+    <head>
+        <!-- CSS -->
+        <link href="path/to/css/introLoader.min.css" rel="stylesheet">
+        <!-- PLUGIN (with helper plugins included) -->
+        <script src="path/to/plugin/jquery.introLoader.pack.min.js"></script>
+    </head>
+    <body>
+        <div id="element" class="introLoading"></div>
+    </body>
+```
+
+**JAVASCRIPT**<br>
+```javascript
+    $(document).ready(function() {
+        $('#element').introLoader();
+    });
+```
+
+*Read documentation to learn more about plugin options and use.*
+
 ###Documentation
 You can find an exaustive documentation on plugin home page<br> [http;//factory.brainleaf.eu/jqueryIntroLoader/#documentation](http://factory.brainleaf.eu/jqueryIntroLoader/#documentation)
 
