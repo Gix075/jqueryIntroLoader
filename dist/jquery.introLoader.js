@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.1.0
+ *  jQueryIntroLoader - v1.1.1
  *  simple intro loader animations
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -133,7 +133,9 @@
             
             
             if (animOpt.stop === true) {
-                simpleLoaderAnimationExit();
+                $(window).on('load', function() {
+                    simpleLoaderAnimationExit();
+                });
             }
         }
         
