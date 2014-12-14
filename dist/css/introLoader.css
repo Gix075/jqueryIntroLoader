@@ -11,7 +11,7 @@
 /* ANIMATION : simpleLoader */
 /* ##################################################################################### */
 
-.introLoading {
+.introLoader {
     position: fixed;
     top: 0;
     right: 0;
@@ -20,37 +20,37 @@
     overflow: hidden;
 }
 
-.absolute.introLoading.simpleLoader {
+.absolute.introLoader.simpleLoader {
     position: absolute;
 }
 
 /* --> theme: light */
-.theme-light.introLoading.simpleLoader {
+.theme-light.introLoader.simpleLoader {
     background: #fff;
 }
 
 /* --> theme: dark */
-.theme-dark.introLoading.simpleLoader {
+.theme-dark.introLoader.simpleLoader {
     background: #333;
 }
 
 /* --> theme: fluoGreen */
-.theme-fluoGreen.introLoading.simpleLoader {
+.theme-fluoGreen.introLoader.simpleLoader {
     background: #67de0f;
 }
 
 /* --> theme: fluoMagenta */
-.theme-fluoMagenta.introLoading.simpleLoader {
+.theme-fluoMagenta.introLoader.simpleLoader {
     background: #ff1bff;
 }
 
 /* --> theme: fluoYellow */
-.theme-fluoYellow.introLoading.simpleLoader {
+.theme-fluoYellow.introLoader.simpleLoader {
     background: #dcff1b;
 }
 
 /* --> theme: rasta */
-.theme-rasta.introLoading.simpleLoader {
+.theme-rasta.introLoader.simpleLoader {
     background: rgb(27,170,5); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(27,170,5,1) 32%, rgba(242,230,7,1) 32%, rgba(242,230,7,1) 69%, rgba(242,230,7,1) 69%, rgba(252,23,7,1) 69%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(32%,rgba(27,170,5,1)), color-stop(32%,rgba(242,230,7,1)), color-stop(69%,rgba(242,230,7,1)), color-stop(69%,rgba(242,230,7,1)), color-stop(69%,rgba(252,23,7,1))); /* Chrome,Safari4+ */
@@ -62,42 +62,5 @@
 }
 
 
-/* ##################################################################################### */
-/* ANIMATION : doubleLoader */
-/* ##################################################################################### */
-.doubleIntroLoader {
-    background: transparent!important;
-}
-.introLoaderTop {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 50%;
-    background-color: #333;
-}
-.introLoaderBottom {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 50%;
-    background-color: #333;
-}
-.doubleIntroLoaderProgBar {
-    position: absolute;
-    top: 50%;
-    margin-top: -10px;
-    width: 100%;
-    height: 20px;
-    background-color: #ccc;
-    z-index: 9999999999999;
-}
 
-.doubleIntroLoaderProgBar span {
-    display: block;
-    width: 0;
-    height: 20px;
-    background: #555;
-}
 

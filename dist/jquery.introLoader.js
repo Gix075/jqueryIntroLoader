@@ -1,10 +1,13 @@
 /*
- *  jQueryIntroLoader - v1.1.1
- *  simple intro loader animations
+ *  jQueryIntroLoader - v1.1.2
+ *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
  *  Made by BRAINLEAF Communication
- *  Under GNU/GPL License
+ *  Released Under GNU/GPL License
+ *  
+ *  
+ *  BugReport/Assistence: https://github.com/Gix075/jqueryIntroLoader/issues
  */
 
 (function($) {
@@ -80,6 +83,7 @@
                     simpleLoaderAnimation(element,animOpt,spinOpt);
                     break;
                 default:
+                    simpleLoaderAnimation(element,animOpt,spinOpt);
                     break;
             }
 
@@ -119,16 +123,16 @@
                 $(element).addClass('absolute');
                 $(element).parent().css({'position':'relative','overflow':'hidden'});
             }
-            $(element).addClass('introLoading simpleLoader ' + styleClass);
+            $(element).addClass('introLoader simpleLoader ' + styleClass);
             
             var markup  = '';
-                markup += '<div id="BLintroLoadingSpinner" class="BL-introLoadingInner">';
+                markup += '<div id="introLoaderSpinner" class="introLoaderInner">';
                 markup += '</div>';
 
             $(element).html(markup);
             $(element).show();
 
-            var target = document.getElementById('BLintroLoadingSpinner');
+            var target = document.getElementById('introLoaderSpinner');
             plugin.spinner.spin(target);
             
             
@@ -150,7 +154,7 @@
                             animOpt.animationTime, 
                             animOpt.ease,
                             function() {
-                                $('#BLintroLoadingSpinner').remove();
+                                $('#introLoaderSpinner').remove();
                                 animOpt.onAfter() // onAfter function
                             }
                         );
@@ -164,7 +168,7 @@
                             animOpt.ease,
                             function () {
                                 $(element).hide();
-                                $('#BLintroLoadingSpinner').remove();
+                                $('#introLoaderSpinner').remove();
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -178,7 +182,7 @@
                             animOpt.ease,
                             function () {
                                 $(element).hide();
-                                $('#BLintroLoadingSpinner').remove();
+                                $('#introLoaderSpinner').remove();
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -192,7 +196,7 @@
                             animOpt.ease,
                             function () {
                                 $(element).hide();
-                                $('#BLintroLoadingSpinner').remove();
+                                $('#introLoaderSpinner').remove();
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -205,7 +209,7 @@
                             animOpt.ease,
                             function () {
                                 $(element).hide();
-                                $('#BLintroLoadingSpinner').remove();
+                                $('#introLoaderSpinner').remove();
                                 animOpt.onAfter(); // onAfter function
                             }
                         );

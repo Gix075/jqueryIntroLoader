@@ -1,10 +1,13 @@
 /*
- *  jQueryIntroLoader - v1.1.1
- *  simple intro loader animations
+ *  jQueryIntroLoader - v1.1.2
+ *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
  *  Made by BRAINLEAF Communication
- *  Under GNU/GPL License
+ *  Released Under GNU/GPL License
+ *  
+ *  
+ *  BugReport/Assistence: https://github.com/Gix075/jqueryIntroLoader/issues
  */
 
 /*!
@@ -14,4 +17,4 @@
  *
  *  Made by BRAINLEAF Communication (c)2014
  *  Under GNU/GPL License
- */.introLoading{position:fixed;top:0;right:0;bottom:0;left:0;overflow:hidden}.absolute.introLoading.simpleLoader{position:absolute}.theme-light.introLoading.simpleLoader{background:#fff}.theme-dark.introLoading.simpleLoader{background:#333}.theme-fluoGreen.introLoading.simpleLoader{background:#67de0f}.theme-fluoMagenta.introLoading.simpleLoader{background:#ff1bff}.theme-fluoYellow.introLoading.simpleLoader{background:#dcff1b}.theme-rasta.introLoading.simpleLoader{background:#1baa05;background:-moz-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-webkit-gradient(linear,left top,left bottom,color-stop(32%,rgba(27,170,5,1)),color-stop(32%,rgba(242,230,7,1)),color-stop(69%,rgba(242,230,7,1)),color-stop(69%,rgba(242,230,7,1)),color-stop(69%,rgba(252,23,7,1)));background:-webkit-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-o-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-ms-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:linear-gradient(to bottom,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1baa05', endColorstr='#fc1707', GradientType=0)}.doubleIntroLoader{background:0 0!important}.introLoaderTop{position:absolute;top:0;right:0;left:0;height:50%;background-color:#333}.introLoaderBottom{position:absolute;right:0;bottom:0;left:0;height:50%;background-color:#333}.doubleIntroLoaderProgBar{position:absolute;top:50%;margin-top:-10px;width:100%;height:20px;background-color:#ccc;z-index:9999999999999}.doubleIntroLoaderProgBar span{display:block;width:0;height:20px;background:#555}
+ */.introLoader{position:fixed;top:0;right:0;bottom:0;left:0;overflow:hidden}.absolute.introLoader.simpleLoader{position:absolute}.theme-light.introLoader.simpleLoader{background:#fff}.theme-dark.introLoader.simpleLoader{background:#333}.theme-fluoGreen.introLoader.simpleLoader{background:#67de0f}.theme-fluoMagenta.introLoader.simpleLoader{background:#ff1bff}.theme-fluoYellow.introLoader.simpleLoader{background:#dcff1b}.theme-rasta.introLoader.simpleLoader{background:#1baa05;background:-moz-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-webkit-gradient(linear,left top,left bottom,color-stop(32%,rgba(27,170,5,1)),color-stop(32%,rgba(242,230,7,1)),color-stop(69%,rgba(242,230,7,1)),color-stop(69%,rgba(242,230,7,1)),color-stop(69%,rgba(252,23,7,1)));background:-webkit-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-o-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:-ms-linear-gradient(top,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);background:linear-gradient(to bottom,rgba(27,170,5,1) 32%,rgba(242,230,7,1) 32%,rgba(242,230,7,1) 69%,rgba(242,230,7,1) 69%,rgba(252,23,7,1) 69%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1baa05', endColorstr='#fc1707', GradientType=0)}
