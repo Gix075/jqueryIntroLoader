@@ -1,4 +1,4 @@
-/*!
+/*
  *  jQueryIntroLoader
  *  Animated intro loading pages
  *  http://factory.brainleaf.eu/jqueryIntroLoader
@@ -63,6 +63,101 @@
 }
 
 
+/* ##################################################################################### */
+/* ANIMATION : doubleLoader */
+/* ##################################################################################### */
+.doubleIntroLoader {
+    background: transparent!important;
+}
+.introLoaderTop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50%;
+    background-color: #333;
+}
+.introLoaderBottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    background-color: #333;
+}
+.doubleIntroLoaderProgBar {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+    z-index: 9999999999999;
+}
 
+.doubleIntroLoaderProgBar span {
+    display: block;
+    width: 0;
+    height: 20px;
+    background-color: #555;
+}
 
+/* --> theme: light */
+.theme-light .introLoaderTop,
+.theme-light .introLoaderBottom {
+    background-color: #efefef;
+}
+.theme-light .doubleIntroLoaderProgBar {
+    background-color: #ccc;
+}
+.theme-light .doubleIntroLoaderProgBar span {
+    background-color: #555;
+}
 
+/* --> theme: dark */
+.theme-dark .introLoaderTop,
+.theme-dark .introLoaderBottom {
+    background-color: #333;
+}
+.theme-dark .doubleIntroLoaderProgBar {
+    background-color: #fff;
+}
+.theme-dark .doubleIntroLoaderProgBar span {
+    background-color: #555;
+}
+
+/* --> theme: fluoGreen */
+.theme-fluoGreen .introLoaderTop,
+.theme-fluoGreen .introLoaderBottom {
+    background-color: #67de0f;
+}
+.theme-fluoGreen .doubleIntroLoaderProgBar {
+    background-color: #fff;
+}
+.theme-fluoGreen .doubleIntroLoaderProgBar span {
+    background-color: #dcff1b;
+}
+
+/* --> theme: fluoMagenta */
+.theme-fluoMagenta .introLoaderTop,
+.theme-fluoMagenta .introLoaderBottom {
+    background-color: #ff1bff;
+}
+.theme-fluoMagenta .doubleIntroLoaderProgBar {
+    background-color: #fff;
+}
+.theme-fluoMagenta .doubleIntroLoaderProgBar span {
+    background-color: #ccc;
+}
+
+/* --> theme: fluoYellow */
+.theme-fluoYellow .introLoaderTop,
+.theme-fluoYellow .introLoaderBottom {
+    background-color: #dcff1b;
+}
+.theme-fluoYellow .doubleIntroLoaderProgBar {
+    background-color: #fff;
+}
+.theme-fluoYellow .doubleIntroLoaderProgBar span {
+    background-color: #67de0f;
+}
