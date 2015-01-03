@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.2.0
+ *  jQueryIntroLoader - v1.3.0
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -25,8 +25,11 @@
                     style: 'light',
                     delayTime: 500,
                     animationTime: 300,
-                    progbarAnimationTime: 300,
-                    progbarDelayAfter: 300,
+                    progbarAnimationTime: 300, // "doubleLoader" animation only
+                    progbarDelayAfter: 300, // "doubleLoader" animation only
+                    loaderText: 'Website is Ready!', // "lettersLoader" animation only
+                    lettersDelayTime: 1, // "lettersLoader" animation only
+                    afterAnimationDelayTime: 0, // "lettersLoader" animation only
                     fixed: true,
                     stop: true,
                     onAfter: function(){},
@@ -88,6 +91,10 @@
                 case "doubleLoader":
                     doubleLoaderAnimation(element,animOpt);
                     break;
+                case "lettersLoader":
+                    plugin.spinner = new Spinner(spinOpt).spin();
+                    lettersLoaderAnimation(element,animOpt,spinOpt);
+                    break;
                 default:
                     plugin.spinner = new Spinner(spinOpt).spin();
                     simpleLoaderAnimation(element,animOpt,spinOpt);
@@ -111,7 +118,10 @@
                     break;
                 case "doubleLoader":
                     doubleLoaderAnimationExit();
-                    break;    
+                    break;  
+                case "lettersLoader":
+                    lettersLoaderAnimationExit();
+                    break;     
             }
             
         }
@@ -299,7 +309,100 @@
                 }, animOpt.progbarAnimationTime + animOpt.progbarDelayAfter ); // end Timeout    
             } // end slidingDoorsVertical()
         }
+        
+        // ----------------------------------------------------------------------------------
+        
+        
+        // ------------------------- lettersLoaderAnimation ----------------------------------
+        var lettersLoaderAnimation = function(element,animOpt,spinOpt) {
+            
+            // onBefore function 
+            animOpt.onBefore();
+            
+            var styleClass = 'theme-'+ animOpt.style;
+            if (animOpt.fixed === false) {
+                $(element).addClass('absolute');
+                $(element).parent().css({'position':'relative','overflow':'hidden'});
+            }
+            $(element).addClass('introLoader lettersLoader ' + styleClass);
+            
+            
+            // split text string
+            var textString = stringSplitter(animOpt.loaderText,'lettersLoaderItem');
+            
+            // animation html markup
+            var markup  = '';
+                markup += '<div id="introLoaderSpinner" class="introLoaderInner"></div>';
+                markup += '<div id="lettersLoaderAnimation" class="lettersLoaderRow">';
+                markup +=   textString;
+                markup += '</div>';
                 
+            $(element).html(markup);
+            $(element).show();
+
+            var target = document.getElementById('introLoaderSpinner');
+            plugin.spinner.spin(target);
+            
+            
+            if (animOpt.stop === true) {
+                $(window).on('load', function() {
+                    lettersLoaderAnimationExit();
+                });
+            }
+            
+        }// end of lettersLoaderAnimation() 
+        
+        
+        var lettersLoaderAnimationExit = function() {
+            var animOpt = plugin.settings.animation.options;
+            
+            setTimeout(function() {
+                
+                plugin.spinner.stop();
+                $(element).find('.lettersLoaderRow').show();
+                var target = $(element).find('.lettersLoaderItem');
+                target.each(function(index) {
+                    var self = this;
+                        
+                        $(self).animate(
+                            {'opacity':1},
+                            animOpt.animationTime * (index + animOpt.lettersDelayTime) ,
+                            animOpt.ease
+                        );
+                        
+                });
+                target.promise().done( function(){
+                    setTimeout(function() {
+                        $(element).fadeOut();
+                    }, animOpt.afterAnimationDelayTime);
+                })
+            }, animOpt.delayTime);
+            
+            
+        }// end of lettersLoaderAnimationExit()
+        
+        
+        // ----------------------------------------------------------------------------------
+        // UTILITIES
+        
+        var stringSplitter = function(string, spanClass) {
+            var str = string.split("");
+            var markup = "";
+            for (var i=0; i<str.length; i++) {
+                var spanCssClass= spanClass;
+                if(str[i] == " ") {
+                    spanCssClass = spanClass+"-space";
+                    str[i] = " ";
+                }
+                markup += '<span class="'+ spanCssClass +'">'+ str[i] +'</span>';
+            }
+            return markup;
+        } //end of stringSplitter()
+        
+        
+        
+        /* ############################################################## */
+        /* PLUGIN INIT */
         plugin.init();
 
     }

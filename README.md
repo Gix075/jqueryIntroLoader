@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.2.0)
+jqueryIntroLoader (version 1.3.0)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -51,12 +51,15 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###ChangeLogs
+**version 1.3.0**<br>
+*------------------*<br>
+New animation *"lettersLoader"* added.<br><br>
 **version 1.2.0**<br>
 *------------------*<br>
-New animation *"doubleLoader"* added.<br>
+New animation *"doubleLoader"* added.<br><br>
 **version 1.1.3**<br>
 *------------------*<br>
-white colored background added to the loader<br>
+White colored background added to the loader<br>
 (prevent site visibility before plugin style assignment).<br>
 
 **version 1.1.2**<br>
@@ -67,7 +70,7 @@ Stylesheet cleaned<br>
 
 **version 1.1.1**<br>
 *------------------*<br>
-some bug correction
+Some bugs correction
 
 **version 1.1.0** <br>
 *------------------*<br>

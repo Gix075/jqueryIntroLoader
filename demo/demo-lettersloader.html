@@ -19,34 +19,33 @@
 	<body>
 		<div id="element" class="introLoading"></div>
         <h1>jqueryIntroLoader demopage</h1>
-        <h3>DEFAULT Settings</h3>
+        <h3>LettersLoader Animation Example</h3>
         <p>
             <a href="index.html" class="button backtoindex" title="Default Options Demo">Back to Demos Index</a>
         </p>
         <div class="animDescription">
             <h2>Animation description</h2>
-            <p>This is a simple demo of jqueryIntroLoader loaded with default options</p>
+            <p>
+                This is a simple demo of jqueryIntroLoader using "lettersLoader" animation.
+            </p>
             
 <code><pre>
-$("#element").introLoader();
-<br>
-Equivalent of:
-<br>
-$("#element").introLoader({
-
-    animation: {
-        name: 'simpleLoader',
-        options: {
-            effect:'fadeOut',
-            ease: "linear",
-            style: 'light',
-            delayTime: 500, //delay time in milliseconds
-            animationTime: 300
+$(document).on('ready', function() {
+    $("#element").introLoader({
+        animation: {
+            name: 'lettersLoader',
+            options: {
+                effect:'fadeOut',
+                ease: "easeInOutCirc",
+                style: 'light',
+                delayTime: 500,
+                animationTime: 300,
+                loaderText: 'Page ready!', 
+                lettersDelayTime: 0, 
+                afterAnimationDelayTime: 0 
+            }
         }
-    },    
-
-    spinJs: {}
-    
+    });
 });
 </pre></code>
                
@@ -55,9 +54,30 @@ $("#element").introLoader({
         
         
 		<script>
-			$(function() {
-				$("#element").introLoader();
-            });
+			$(document).on('ready', function() {
+				$("#element").introLoader({
+                    animation: {
+                        name: 'lettersLoader',
+                        options: {
+                            effect:'light',
+                            ease: "easeInOutCirc",
+                            style: 'fluoYellow',
+                            delayTime: 500,
+                            animationTime: 300,
+                            loaderText: 'Page ready!', 
+                            lettersDelayTime: 0, 
+                            afterAnimationDelayTime: 0 
+                        }
+                    },
+                    spinJs: {
+                        lines: 13, // The number of lines to draw
+                        length: 20, // The length of each line
+                        radius: 30, // The radius of the inner circle
+                        width: 10, // The line thickness
+                        color: '#333' // #rgb or #rrggbb or array of colors
+                    }
+                });
+			});
 		</script>
         
         

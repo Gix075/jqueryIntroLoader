@@ -3,13 +3,9 @@
  *  Animated intro loading pages
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
- *  Made by BRAINLEAF Communication (c)2014
+ *  Made by BRAINLEAF Communication (c)2014-2015
  *  Under GNU/GPL License
  */
-
-/* ##################################################################################### */
-/* ANIMATION : simpleLoader */
-/* ##################################################################################### */
 
 .introLoader {
     position: fixed;
@@ -20,6 +16,15 @@
     overflow: hidden;
     background-color: #fff;
 }
+
+.absolute.introLoader {
+    position: absolute;
+}
+
+
+/* ##################################################################################### */
+/* ANIMATION : simpleLoader */
+/* ##################################################################################### */
 
 .absolute.introLoader.simpleLoader {
     position: absolute;
@@ -160,4 +165,40 @@
 }
 .theme-fluoYellow .doubleIntroLoaderProgBar span {
     background-color: #67de0f;
+}
+
+/* ##################################################################################### */
+/* ANIMATION : lettersLoader */
+/* ##################################################################################### */
+
+.lettersLoader {
+    background: #333;
+    color: #fff;
+    font-size: 3em;
+}
+
+.lettersLoaderRow {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    text-align: center;
+
+}
+
+.lettersLoaderItem {
+    display: inline-block;
+    opacity: 0;
+}
+
+/* --> theme: light */
+.theme-light.lettersLoader {
+    background: #fff;
+    color: #333;
+}
+
+/* --> theme: dark */
+.theme-dark.lettersLoader {
+    background: #333;
+    color: #fff;
 }
