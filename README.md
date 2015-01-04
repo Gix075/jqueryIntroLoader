@@ -65,7 +65,7 @@ This plugin use some tird party software to do something during animations.<br>
 ###ChangeLogs
 **version 1.3.2**<br>
 *------------------*<br>
-New styles (*"ocean"* and *"forest"+) added for all animations<br> 
+New styles (*"ocean"* and *"forest"*) added for all animations<br> 
 New substyles "zebra" added for "doubleLoader" animation only.<br>
 LESS file added to the project<br>
 Some Javascript changes
