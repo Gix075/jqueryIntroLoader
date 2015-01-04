@@ -1,0 +1,398 @@
+// out: introLoader.css, compress: false
+// The row above is needed to Brakets editor extension "LESS AutoCompile" to compile this less file
+/*
+ *  jQueryIntroLoader
+ *  Animated intro loading pages
+ *  http://factory.brainleaf.eu/jqueryIntroLoader
+ *
+ *  Made by BRAINLEAF Communication (c)2014-2015
+ *  Under GNU/GPL License
+ */
+
+// ****************************************************************************** 
+// {less} VARIABLES */
+// ****************************************************************************** 
+
+// COLORSETS 
+// ================================ 
+
+// Colorset: light (default)
+@cset-light-1: #fff;
+@cset-light-2: #ccc;
+@cset-light-3: #555;
+@cset-light-4: #efefef;
+
+// Colorset: dark
+@cset-dark-1: #333;
+@cset-dark-2: #fff;
+@cset-dark-3: #555;
+@cset-dark-4: #121212;
+
+// Colorset: ocean
+@cset-ocean-1: #164761;
+@cset-ocean-2: #237199;
+@cset-ocean-3: #fff;
+@cset-ocean-4: #20B1EA;
+
+// Colorset: forest
+@cset-forest-1: #1F3608;
+@cset-forest-2: #5E5824;
+@cset-forest-3: #A59965;
+@cset-forest-4: #332A0B;
+
+// Colorset: fluoGreen
+@cset-fluoGreen-1: #67de0f;
+@cset-fluoGreen-2: #fff;
+@cset-fluoGreen-3: #dcff1b;
+@cset-fluoGreen-4: #67de0f;
+
+// Colorset: fluoMagenta
+@cset-fluoMagenta-1: #ff1bff;
+@cset-fluoMagenta-2: #fff;
+@cset-fluoMagenta-3: #ccc;
+@cset-fluoMagenta-4: #ff1bff;
+
+// Colorset: fluoYellow
+@cset-fluoYellow-1: #dcff1b;
+@cset-fluoYellow-2: #fff;
+@cset-fluoYellow-3: #67de0f;
+@cset-fluoYellow-4: #dcff1b;
+
+/* ****************************************************************************** */
+/* PLUGIN STYLE */
+/* ****************************************************************************** */
+
+/* ============================================================================== */ 
+/* Global Style */
+/* ============================================================================== */ 
+.introLoader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.absolute.introLoader {
+    position: absolute;
+}
+
+/* ============================================================================== */ 
+/* Animations */
+/* ============================================================================== */ 
+
+/* *************************************************** */ 
+/* SimpleLoader Animation */
+/* *************************************************** */ 
+
+.absolute.introLoader.simpleLoader {
+    position: absolute;
+}
+
+/* SimpleLoader Animation Colors */
+/* -------------------------------------------- */
+// colorset: light 
+.theme-light.introLoader.simpleLoader {
+    background-color: @cset-light-1;
+}
+// colorset: dark 
+.theme-dark.introLoader.simpleLoader {
+    background-color: @cset-dark-1;
+}
+// colorset: ocean 
+.theme-ocean.introLoader.simpleLoader {
+    background-color: @cset-ocean-1;
+}
+// colorset: forest 
+.theme-forest.introLoader.simpleLoader {
+    background-color: @cset-forest-1;
+}
+// colorset: fluoGreen
+.theme-fluoGreen.introLoader.simpleLoader {
+    background-color: @cset-fluoGreen-1;
+}
+// colorset: fluoMagenta 
+.theme-fluoMagenta.introLoader.simpleLoader {
+    background-color: @cset-fluoMagenta-1;
+}
+// colorset: fluoYellow 
+.theme-fluoYellow.introLoader.simpleLoader {
+    background-color: @cset-fluoYellow-1;
+}
+
+/* *************************************************** */ 
+/* doubleLoader Animation */
+/* *************************************************** */ 
+
+.doubleLoader {
+    background: transparent!important;
+}
+.doubleLoaderTop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50%;
+    background-color: #333;
+}
+.doubleLoaderBottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    background-color: #333;
+}
+.doubleLoaderProgBar {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+    z-index: 9999999999999;
+}
+
+.doubleLoaderProgBar span {
+    display: block;
+    width: 0;
+    height: 20px;
+    background-color: #555;
+}
+
+/* DoubleLoader Animation Colors */
+/* -------------------------------------------- */
+
+// colorset: light 
+.doubleLoader.theme-light {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-light-4;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-light-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-light-3;
+    }
+} // end theme-light
+
+.doubleLoader.theme-light.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-light-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-light-4;
+    }
+    
+} // end theme-light.zebra
+
+// colorset: dark 
+.doubleLoader.theme-dark {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-dark-1;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-dark-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-dark-3;
+    }
+} // end theme-dark
+
+.doubleLoader.theme-dark.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-dark-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-dark-4;
+    } 
+} // end theme-dark.zebra
+
+// colorset: ocean 
+.doubleLoader.theme-ocean {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-ocean-1;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-ocean-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-ocean-3;
+    }
+} // end theme-ocean
+
+.doubleLoader.theme-ocean.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-ocean-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-ocean-4;
+    } 
+} // end theme-ocean.zebra
+
+// colorset: forest 
+.doubleLoader.theme-forest {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-forest-1;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-forest-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-forest-3;
+    }
+} // end theme-forest
+
+.doubleLoader.theme-forest.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-forest-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-forest-4;
+    } 
+} // end theme-ocean.forest
+
+// colorset: fluoGreen 
+.doubleLoader.theme-fluoGreen {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-fluoGreen-1;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-fluoGreen-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-fluoGreen-3;
+    }
+} // end theme-fluoGreen
+
+.doubleLoader.theme-fluoGreen.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-fluoGreen-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-fluoGreen-4;
+    } 
+} // end theme-ocean.fluoGreen
+
+// colorset: fluoMagenta
+.doubleLoader.theme-fluoMagenta {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-fluoMagenta-1;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-fluoMagenta-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-fluoMagenta-3;
+    }
+} // end theme-fluoMagenta
+
+.doubleLoader.theme-fluoMagenta.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-fluoMagenta-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-fluoMagenta-4;
+    } 
+} // end theme-ocean.fluoMagenta
+
+// colorset: fluoYellow
+.doubleLoader.theme-fluoYellow {
+    .doubleLoaderTop,
+    .doubleLoaderBottom {
+        background-color: @cset-fluoYellow-1;
+    }
+    .doubleLoaderProgBar {
+        background-color: @cset-fluoYellow-2;
+    }
+    .doubleLoaderProgBar span {
+        background-color: @cset-fluoYellow-3;
+    }
+} // end theme-fluoYellow
+
+.doubleLoader.theme-fluoYellow.zebra {
+    .doubleLoaderTop {
+        background-color: @cset-fluoYellow-1;
+    }
+    .doubleLoaderBottom {
+        background-color: @cset-fluoYellow-4;
+    } 
+} // end theme-ocean.fluoYellow
+
+
+/* *************************************************** */ 
+/* LettersLoader Animation */
+/* *************************************************** */ 
+
+.lettersLoader {
+    background: @cset-light-1;
+    color: @cset-light-3;
+    font-size: 3em;
+}
+
+.lettersLoaderRow {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    text-align: center;
+
+}
+
+.lettersLoaderItem {
+    display: inline-block;
+    opacity: 0;
+}
+
+/* LettersLoader Animation Colors */
+/* -------------------------------------------- */
+
+// colorset: light
+.theme-light.lettersLoader {
+    background: @cset-light-1;
+    color: @cset-light-3;
+}
+
+// colorset: dark 
+.theme-dark.lettersLoader {
+    background: @cset-dark-1;
+    color: @cset-dark-2;
+}
+
+// colorset: ocean 
+.theme-ocean.lettersLoader {
+    background: @cset-ocean-1;
+    color: @cset-ocean-3;
+}
+
+// colorset: forest
+.theme-forest.lettersLoader {
+    background: @cset-forest-1;
+    color: @cset-forest-3;
+}
+
+// colorset: fluoGreen
+.theme-fluoGreen.lettersLoader {
+    background: @cset-fluoGreen-1;
+    color: @cset-fluoGreen-2;
+}
+
+// colorset: fluoMagenta
+.theme-fluoMagenta.lettersLoader {
+    background: @cset-fluoMagenta-1;
+    color: @cset-fluoMagenta-2;
+}
+
+// colorset: fluoYellow
+.theme-fluoGreen.lettersLoader {
+    background: @cset-fluoMagenta-1;
+    color: @cset-fluoMagenta-2;
+}

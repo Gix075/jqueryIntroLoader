@@ -1,10 +1,11 @@
 /*
- *  jQueryIntroLoader - v1.3.0
+ *  jQueryIntroLoader - v1.3.2
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
  *  Made by BRAINLEAF Communication
  *  Released Under GNU/GPL License
+ *  (c)2014-2015 by BRAINLEAF Communication
  *  
  *  
  *  BugReport/Assistence: https://github.com/Gix075/jqueryIntroLoader/issues
@@ -140,14 +141,8 @@
             
             // onBefore function 
             animOpt.onBefore();  
-            
-            var styleClass = 'theme-'+ animOpt.style;
-            if (animOpt.fixed === false) {
-                $(element).addClass('absolute');
-                $(element).parent().css({'position':'relative','overflow':'hidden'});
-            }
-            $(element).addClass('introLoader simpleLoader ' + styleClass);
-            
+            animationOpening(element,animOpt,'simpleLoader');
+          
             var markup  = '';
                 markup += '<div id="introLoaderSpinner" class="introLoaderInner">';
                 markup += '</div>';
@@ -255,18 +250,12 @@
         var doubleLoaderAnimation = function(element,animOpt) {
             // onBefore function 
             animOpt.onBefore(); 
-            
-            var styleClass = 'theme-'+ animOpt.style;
-            if (animOpt.fixed === false) {
-                $(element).addClass('absolute');
-                $(element).parent().css({'position':'relative','overflow':'hidden'});
-            }
-            $(element).addClass('introLoader doubleIntroLoader ' + styleClass);
+            animationOpening(element,animOpt,'doubleLoader');
             
             var markup  = '';
-                markup += '<div class="introLoaderTop"></div>';
-                markup += '<div class="introLoaderBottom"></div>';
-                markup += '<div class="doubleIntroLoaderProgBar"><span></span></div>';
+                markup += '<div class="doubleLoaderTop"></div>';
+                markup += '<div class="doubleLoaderBottom"></div>';
+                markup += '<div class="doubleLoaderProgBar"><span></span></div>';
 
             $(element).html(markup);
             $(element).show();     
@@ -285,7 +274,7 @@
             
             setTimeout(function() {
                 
-                $(element).find('.doubleIntroLoaderProgBar').find('span').animate(
+                $(element).find('.doubleLoaderProgBar').find('span').animate(
                     {'width':'100%'},
                     animOpt.progbarAnimationTime, 
                     animOpt.ease,
@@ -296,8 +285,8 @@
             
             function slidingDoorsVertical() {
                 setTimeout(function() {
-                    $(element).find('.doubleIntroLoaderProgBar').hide();
-                    $(element).find('.introLoaderTop, .introLoaderBottom').animate(
+                    $(element).find('.doubleLoaderProgBar').hide();
+                    $(element).find('.doubleLoaderTop, .doubleLoaderBottom').animate(
                         {'height':0},
                         animOpt.animationTime, 
                         animOpt.ease,
@@ -318,14 +307,7 @@
             
             // onBefore function 
             animOpt.onBefore();
-            
-            var styleClass = 'theme-'+ animOpt.style;
-            if (animOpt.fixed === false) {
-                $(element).addClass('absolute');
-                $(element).parent().css({'position':'relative','overflow':'hidden'});
-            }
-            $(element).addClass('introLoader lettersLoader ' + styleClass);
-            
+            animationOpening(element,animOpt,'lettersLoader');
             
             // split text string
             var textString = stringSplitter(animOpt.loaderText,'lettersLoaderItem');
@@ -384,6 +366,15 @@
         
         // ----------------------------------------------------------------------------------
         // UTILITIES
+        
+        var animationOpening = function(element,animOpt,elementClass) {
+            var styleClass = 'theme-'+ animOpt.style;
+            if (animOpt.fixed === false) {
+                $(element).addClass('absolute');
+                $(element).parent().css({'position':'relative','overflow':'hidden'});
+            }
+            $(element).addClass('introLoader '+ elementClass +' ' + styleClass);
+        }// end of animationOpening()
         
         var stringSplitter = function(string, spanClass) {
             var str = string.split("");

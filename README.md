@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.3.0)
+jqueryIntroLoader (version 1.3.2)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -46,11 +46,30 @@ This plugin is very easy to install and use.
 ###Documentation
 You can find an exaustive documentation on plugin home page<br> [http;//factory.brainleaf.eu/jqueryIntroLoader/#documentation](http://factory.brainleaf.eu/jqueryIntroLoader/#documentation)
 
+###{less} Stylesheet
+From *version 1.3.2*  **introLoaderLess.less** file was added to the project.<br>
+This file allow you to modify easly and quickly the animations' styles and colors.<br>
+Even though the css plugin is simple, use Less for the compilation of the CSS makes work easier.
+
+###Available Animations and Styles
+At now we provide 3 kind of animations and 7 color styles:
+**Animations**: *simpleLoader* - *doubleLoader* - *lettersLoader*<br>
+**Styles**: *light (default style)* - *dark* - *ocean* - *forest* - *fluoGreen* - *fluoMagenta* - *fluoYellow*
+
+**Warning**: *lettersLoader* animation is at beta version, but you can use it. I'm working to refine it.
+
 ###Sofware incuded
 This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###ChangeLogs
+**version 1.3.2**<br>
+*------------------*<br>
+New styles (*"ocean"* and *"forest"+) added for all animations<br> 
+New substyles "zebra" added for "doubleLoader" animation only.<br>
+LESS file added to the project<br>
+Some Javascript changes
+<br><br>
 **version 1.3.0**<br>
 *------------------*<br>
 New animation *"lettersLoader"* added.<br><br>
