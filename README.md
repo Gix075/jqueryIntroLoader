@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.3.2)
+jqueryIntroLoader (version 1.3.3)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -52,7 +52,7 @@ This file allow you to modify easly and quickly the animations' styles and color
 Even though the css plugin is simple, use Less for the compilation of the CSS makes work easier.
 
 ###Available Animations and Styles
-At now we provide 3 kind of animations and 7 color styles:
+At now we provide 3 kind of animations and 7 color styles<br>
 **Animations**: *simpleLoader* - *doubleLoader* - *lettersLoader*<br>
 **Styles**: *light (default style)* - *dark* - *ocean* - *forest* - *fluoGreen* - *fluoMagenta* - *fluoYellow*
 
@@ -63,6 +63,10 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###ChangeLogs
+**version 1.3.3**<br>
+*------------------*<br>
+Some CSS bug solved<br>
+<br><br>
 **version 1.3.2**<br>
 *------------------*<br>
 New styles (*"ocean"* and *"forest"*) added for all animations<br> 

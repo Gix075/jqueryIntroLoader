@@ -13,13 +13,16 @@
 /* ============================================================================== */
 /* Global Style */
 /* ============================================================================== */
-.introLoader {
+.introLoader,
+.introLoading {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   overflow: hidden;
+}
+.introLoading {
   background-color: #fff;
 }
 .absolute.introLoader {
@@ -174,7 +177,7 @@
   background-color: #67de0f;
 }
 .doubleLoader.theme-fluoGreen.zebra .doubleLoaderBottom {
-  background-color: #67de0f;
+  background-color: #53ba06;
 }
 .doubleLoader.theme-fluoMagenta .doubleLoaderTop,
 .doubleLoader.theme-fluoMagenta .doubleLoaderBottom {
@@ -190,7 +193,7 @@
   background-color: #ff1bff;
 }
 .doubleLoader.theme-fluoMagenta.zebra .doubleLoaderBottom {
-  background-color: #ff1bff;
+  background-color: #db07db;
 }
 .doubleLoader.theme-fluoYellow .doubleLoaderTop,
 .doubleLoader.theme-fluoYellow .doubleLoaderBottom {
@@ -206,7 +209,7 @@
   background-color: #dcff1b;
 }
 .doubleLoader.theme-fluoYellow.zebra .doubleLoaderBottom {
-  background-color: #dcff1b;
+  background-color: #d5f816;
 }
 /* *************************************************** */
 /* LettersLoader Animation */

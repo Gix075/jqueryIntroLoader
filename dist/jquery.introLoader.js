@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.3.2
+ *  jQueryIntroLoader - v1.3.3
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
