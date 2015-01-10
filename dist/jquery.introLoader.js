@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.3.3
+ *  jQueryIntroLoader - v1.3.5
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -31,6 +31,7 @@
                     loaderText: 'Website is Ready!', // "lettersLoader" animation only
                     lettersDelayTime: 1, // "lettersLoader" animation only
                     afterAnimationDelayTime: 0, // "lettersLoader" animation only
+                    preventScroll: false,
                     fixed: true,
                     stop: true,
                     onAfter: function(){},
@@ -173,6 +174,7 @@
                             animOpt.ease,
                             function() {
                                 $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                                 animOpt.onAfter() // onAfter function
                             }
                         );
@@ -187,6 +189,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -201,6 +204,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -215,6 +219,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -228,6 +233,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -292,6 +298,7 @@
                         animOpt.ease,
                         function() {
                             $(element).hide();
+                            if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                             animOpt.onAfter(); // onAfter function
                         }
                     );
@@ -356,6 +363,7 @@
                 target.promise().done( function(){
                     setTimeout(function() {
                         $(element).fadeOut();
+                        if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
                     }, animOpt.afterAnimationDelayTime);
                 })
             }, animOpt.delayTime);
@@ -368,6 +376,7 @@
         // UTILITIES
         
         var animationOpening = function(element,animOpt,elementClass) {
+            if (animOpt.preventScroll === true) $('body').css({'overflow':'hidden'});
             var styleClass = 'theme-'+ animOpt.style;
             if (animOpt.fixed === false) {
                 $(element).addClass('absolute');

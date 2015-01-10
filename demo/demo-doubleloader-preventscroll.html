@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery IntroLoader Demo</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
+        <link href="demo.css" rel="stylesheet">
+        
+        <!-- PLUGIN INCLUSION  ------------------------------------- -->
+        <!-- css -->
+        <link href="../dist/css/introLoader.css" rel="stylesheet">
+		<!-- jQuery, Helpers and jqueryIntrLoader -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../dist/helpers/jquery.easing.1.3.js"></script>
+        <script src="../dist/helpers/spin.min.js"></script>
+        <script src="../dist/jquery.introLoader.js"></script>
+        <!-- -------------------------------------------------------- -->
+
+	</head>
+	<body>
+		<div id="element" class="introLoading"></div>
+        <h1>jqueryIntroLoader demopage</h1>
+        <h3>DoubleLoader Animation Example</h3>
+        <p>
+            <a href="index.html" class="button backtoindex" title="Default Options Demo">Back to Demos Index</a>
+        </p>
+        <div class="animDescription">
+            <h2>Animation description</h2>
+            <p>
+                This is a simple demo of jqueryIntroLoader using "doubleLoader" animation and <strong>"lockedBody"</strong> option setted on <strong>true</strong>.
+            </p>
+            
+<code><pre>
+$("#element").introLoader({
+    animation: {
+        name: 'doubleLoader',
+        options: {
+            effect:'fadeOut',
+            ease: "easeInOutCirc",
+            style: 'ocean zebra',
+            delayTime: 500,
+            animationTime: 300,
+            progbarAnimationTime: 700,
+            progbarDelayAfter: 400,
+            <strong>preventScroll: true</strong>
+        }
+    }
+});
+</pre></code>
+            <h3>Lorem Ipsum</h3>
+            <p>
+                Pariatur in legam vidisse in excepteur quid est ingeniis illustriora, irure o 
+                deserunt e irure ad quid do admodum do illum. De nam coniunctione. Consequat 
+                cohaerescant ita eiusmod, te quis probant, quid quo se magna ullamco ex nescius 
+                multos ipsum occaecat quem non cernantur quorum cillum eu quis, senserit multos 
+                dolore singulis fugiat, labore fabulas et nostrud qui iudicem ne sint occaecat. 
+                Se culpa doctrina, do e aute malis dolor. Anim sed litteris, si occaecat hic 
+                incididunt ubi quorum nam ubi eram possumus in fabulas lorem arbitror pariatur, 
+                do id fore quis fore, a quis esse legam admodum et cernantur quorum deserunt 
+                incididunt hic ab laborum praesentibus. Aliqua ea ut multos pariatur. Fabulas 
+                aliqua nam appellat despicationes.<br>
+                Et culpa enim se doctrina se mandaremus de offendit, ingeniis eu aute ullamco, 
+                quibusdam dolore nisi e nulla. Incurreret cillum offendit occaecat et voluptate 
+                an nulla, est incurreret ad fabulas, se culpa te dolore, ex legam e eram qui de 
+                malis an amet, officia quid singulis consequat, iudicem sed arbitror. Malis 
+                doctrina se consectetur ne anim senserit et aliquip ad est nisi voluptatibus, ne 
+                legam esse magna cupidatat. Cupidatat de aute deserunt. Minim comprehenderit 
+                litteris irure litteris, ea enim cupidatat officia in sint consequat excepteur, 
+                aut quis efflorescere ita irure coniunctione probant legam officia, ea cupidatat 
+                despicationes se id commodo iis iudicem, multos probant e noster nisi. Ne varias 
+                probant iudicem.<br>
+                Quorum voluptate ne nescius e quibusdam sempiternum e iudicem ea noster mentitum 
+                voluptate in ex arbitror o possumus, e summis labore quem deserunt ea e do 
+                coniunctione, te summis nescius fabulas, quibusdam ea enim. Eu anim appellat 
+                senserit se cernantur enim dolore mentitum multos. Iis nam consectetur si 
+                mentitum ut aliquip est iis expetendis illustriora, et quo irure aliqua elit ea 
+                o sint amet enim fabulas, do dolor arbitrantur, proident efflorescere qui 
+                quamquam, quis cernantur ab minim lorem. Qui noster singulis quamquam, pariatur 
+                cillum labore officia multos qui ea tempor voluptatibus, labore an eu legam 
+                probant. Velit senserit a cernantur. Multos ea mentitum, hic quem transferrem, 
+                lorem ad ad ipsum arbitror, sint occaecat ita nulla dolore, offendit labore 
+                cupidatat consequat ad ad anim quae noster possumus de sint ea quamquam e lorem, 
+                fabulas irure enim eu nisi. Ea magna senserit est senserit coniunctione ex 
+                litteris si ea malis voluptate an deserunt philosophari ut eiusmod.<br>
+                Aliqua doctrina exercitation hic est o quae nulla cillum. Ubi offendit 
+                coniunctione, culpa id litteris e quid. Expetendis dolor proident ita expetendis 
+                te arbitror. Varias ne consequat ex legam aut qui multos consectetur. Quo varias 
+                vidisse commodo te aut magna quo elit, quae vidisse fidelissimae, ut irure 
+                fugiat nam quibusdam. Ipsum ubi ubi irure tempor, ita proident coniunctione, sed 
+                duis tempor aliquip ab veniam iis appellat ita quis quo tempor in quem, varias 
+                laboris eu cillum dolor, elit officia a irure multos ex aute si ingeniis est 
+                quorum. O labore comprehenderit. Malis officia ubi adipisicing, sint ab eiusmod 
+                ut fore.<br>
+                Cernantur de possumus. Quem ita aut legam nostrud. Senserit qui dolor cupidatat 
+                est singulis culpa eiusmod si aut incididunt cohaerescant sed veniam 
+                praetermissum fabulas velit mentitum. An fore fabulas laborum. Occaecat 
+                exquisitaque do arbitror. Sed velit arbitror firmissimum aut do magna ne veniam. 
+                Nostrud efflorescere aut aliquip in et in multos singulis ubi et o tractavissent 
+                se an quo esse cupidatat.<br>
+                Pariatur in legam vidisse in excepteur quid est ingeniis illustriora, irure o 
+                deserunt e irure ad quid do admodum do illum. De nam coniunctione. Consequat 
+                cohaerescant ita eiusmod, te quis probant, quid quo se magna ullamco ex nescius 
+                multos ipsum occaecat quem non cernantur quorum cillum eu quis, senserit multos 
+                dolore singulis fugiat, labore fabulas et nostrud qui iudicem ne sint occaecat. 
+                Se culpa doctrina, do e aute malis dolor. Anim sed litteris, si occaecat hic 
+                incididunt ubi quorum nam ubi eram possumus in fabulas lorem arbitror pariatur, 
+                do id fore quis fore, a quis esse legam admodum et cernantur quorum deserunt 
+                incididunt hic ab laborum praesentibus. Aliqua ea ut multos pariatur. Fabulas 
+                aliqua nam appellat despicationes.<br>
+                Et culpa enim se doctrina se mandaremus de offendit, ingeniis eu aute ullamco, 
+                quibusdam dolore nisi e nulla. Incurreret cillum offendit occaecat et voluptate 
+                an nulla, est incurreret ad fabulas, se culpa te dolore, ex legam e eram qui de 
+                malis an amet, officia quid singulis consequat, iudicem sed arbitror. Malis 
+                doctrina se consectetur ne anim senserit et aliquip ad est nisi voluptatibus, ne 
+                legam esse magna cupidatat. Cupidatat de aute deserunt. Minim comprehenderit 
+                litteris irure litteris, ea enim cupidatat officia in sint consequat excepteur, 
+                aut quis efflorescere ita irure coniunctione probant legam officia, ea cupidatat 
+                despicationes se id commodo iis iudicem, multos probant e noster nisi. Ne varias 
+                probant iudicem.<br>
+                Quorum voluptate ne nescius e quibusdam sempiternum e iudicem ea noster mentitum 
+                voluptate in ex arbitror o possumus, e summis labore quem deserunt ea e do 
+                coniunctione, te summis nescius fabulas, quibusdam ea enim. Eu anim appellat 
+                senserit se cernantur enim dolore mentitum multos. Iis nam consectetur si 
+                mentitum ut aliquip est iis expetendis illustriora, et quo irure aliqua elit ea 
+                o sint amet enim fabulas, do dolor arbitrantur, proident efflorescere qui 
+                quamquam, quis cernantur ab minim lorem. Qui noster singulis quamquam, pariatur 
+                cillum labore officia multos qui ea tempor voluptatibus, labore an eu legam 
+                probant. Velit senserit a cernantur. Multos ea mentitum, hic quem transferrem, 
+                lorem ad ad ipsum arbitror, sint occaecat ita nulla dolore, offendit labore 
+                cupidatat consequat ad ad anim quae noster possumus de sint ea quamquam e lorem, 
+                fabulas irure enim eu nisi. Ea magna senserit est senserit coniunctione ex 
+                litteris si ea malis voluptate an deserunt philosophari ut eiusmod.<br>
+                Aliqua doctrina exercitation hic est o quae nulla cillum. Ubi offendit 
+                coniunctione, culpa id litteris e quid. Expetendis dolor proident ita expetendis 
+                te arbitror. Varias ne consequat ex legam aut qui multos consectetur. Quo varias 
+                vidisse commodo te aut magna quo elit, quae vidisse fidelissimae, ut irure 
+                fugiat nam quibusdam. Ipsum ubi ubi irure tempor, ita proident coniunctione, sed 
+                duis tempor aliquip ab veniam iis appellat ita quis quo tempor in quem, varias 
+                laboris eu cillum dolor, elit officia a irure multos ex aute si ingeniis est 
+                quorum. O labore comprehenderit. Malis officia ubi adipisicing, sint ab eiusmod 
+                ut fore.<br>
+                Cernantur de possumus. Quem ita aut legam nostrud. Senserit qui dolor cupidatat 
+                est singulis culpa eiusmod si aut incididunt cohaerescant sed veniam 
+                praetermissum fabulas velit mentitum. An fore fabulas laborum. Occaecat 
+                exquisitaque do arbitror. Sed velit arbitror firmissimum aut do magna ne veniam. 
+                Nostrud efflorescere aut aliquip in et in multos singulis ubi et o tractavissent 
+                se an quo esse cupidatat.
+            </p>
+               
+            
+        </div>
+        
+        
+		<script>
+			$(document).on('ready', function() {
+				$("#element").introLoader({
+                    animation: {
+                        name: 'doubleLoader',
+                        options: {
+                            effect:'fadeOut',
+                            ease: "easeInOutCirc",
+                            style: 'ocean zebra',
+                            delayTime: 500,
+                            animationTime: 300,
+                            progbarAnimationTime: 700,
+                            progbarDelayAfter: 400,
+                            preventScroll: true
+                        }
+                    }
+                });
+			});
+		</script>
+        
+        
+        
+        <!-- Google Analytics -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-47727083-1');ga('send','pageview');
+        </script>
+        
+	</body>
+</html>
