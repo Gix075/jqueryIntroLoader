@@ -7,7 +7,7 @@ This plugin help jquery beginners to add some cool animated intro page on a webs
 This plugin is very easy to install and use.
 
 [Home](http://factory.brainleaf.eu/jqueryIntroLoader) | 
-[Documentation](http://factory.brainleaf.eu/jqueryIntroLoader/#documentation) | [Demo](http://factory.brainleaf.eu/jqueryIntroLoader/demo)
+[Documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php) | [Demo](http://factory.brainleaf.eu/jqueryIntroLoader/demo)
 
 ###Why use it?
 
