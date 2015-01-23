@@ -44,7 +44,7 @@ This plugin is very easy to install and use.
 *Read documentation to learn more about plugin options and use.*
 
 ###Documentation
-You can find an exaustive documentation on plugin home page<br> [http;//factory.brainleaf.eu/jqueryIntroLoader/#documentation](http://factory.brainleaf.eu/jqueryIntroLoader/#documentation)
+You can find an exaustive documentation on plugin home page<br> [http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php)
 
 ###{less} Stylesheet
 From *version 1.3.2*  **introLoaderLess.less** file was added to the project.<br>
