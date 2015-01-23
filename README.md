@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.3.5)
+jqueryIntroLoader (version 1.3.6)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -65,17 +65,16 @@ This plugin use some tird party software to do something during animations.<br>
 ###ChangeLogs
 **version 1.3.6**<br>
 *------------------*<br>
-"preventScroll" bug on iOS solved<br><br>
+"preventScroll" bug on iOS solved.
 
 **version 1.3.5**<br>
 *------------------*<br>
 New "preventScroll" option added to animation options group<br>
-See [documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php#prevent-scroll).<br><br>
+See [documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php#prevent-scroll).
 
 **version 1.3.3**<br>
 *------------------*<br>
 Some CSS bugs solved
-<br><br>
 
 **version 1.3.2**<br>
 *------------------*<br>
@@ -83,30 +82,29 @@ New styles (*"ocean"* and *"forest"*) added for all animations<br>
 New substyles "zebra" added for "doubleLoader" animation only.<br>
 LESS file added to the project<br>
 Some Javascript changes
-<br><br>
 
 **version 1.3.0**<br>
 *------------------*<br>
-New animation *"lettersLoader"* added.<br><br>
+New animation *"lettersLoader"* added.
 
 **version 1.2.0**<br>
 *------------------*<br>
-New animation *"doubleLoader"* added.<br><br>
+New animation *"doubleLoader"* added.
 
 **version 1.1.3**<br>
 *------------------*<br>
 White colored background added to the loader<br>
-(prevent site visibility before plugin style assignment).<br><br>
+(prevent site visibility before plugin style assignment).
 
 **version 1.1.2**<br>
 *------------------*<br>
 CSS classes name changed<br>
 Spinner ID changed<br>
-Stylesheet cleaned<br><br>
+Stylesheet cleaned
 
 **version 1.1.1**<br>
 *------------------*<br>
-Some bugs correction<br><br>
+Some bugs correction
 
 **version 1.1.0** <br>
 *------------------*<br>
