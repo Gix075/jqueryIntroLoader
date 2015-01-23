@@ -63,6 +63,10 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###ChangeLogs
+**version 1.3.6**<br>
+*------------------*<br>
+"preventScroll" bug on iOS solved<br><br>
+
 **version 1.3.5**<br>
 *------------------*<br>
 New "preventScroll" option added to animation options group<br>

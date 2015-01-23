@@ -83,6 +83,13 @@
     position: absolute;
 }
 
+body.introLoader_preventScroll {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
 /* ============================================================================== */ 
 /* Animations */
 /* ============================================================================== */ 
@@ -399,4 +406,29 @@
 .theme-fluoGreen.lettersLoader {
     background: @cset-fluoMagenta-1;
     color: @cset-fluoMagenta-2;
+}
+
+
+/* *************************************************** */ 
+/* Quads Animation */
+/* *************************************************** */ 
+
+.quadsLoader__area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.quadsLoader__row {
+    overflow: auto;
+}
+
+.quadsLoader__quad {
+    position: relative;
+    float: left;
+}
+
+.quadsLoader__quad-inner {
+    background: rgb(51, 51, 51);
+    position: absolute;
 }

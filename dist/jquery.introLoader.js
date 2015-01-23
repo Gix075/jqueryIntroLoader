@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.3.5
+ *  jQueryIntroLoader - v1.3.6
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -174,7 +174,7 @@
                             animOpt.ease,
                             function() {
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter() // onAfter function
                             }
                         );
@@ -189,7 +189,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -204,7 +204,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -219,7 +219,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -233,7 +233,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -298,7 +298,7 @@
                         animOpt.ease,
                         function() {
                             $(element).hide();
-                            if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                            if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                             animOpt.onAfter(); // onAfter function
                         }
                     );
@@ -363,7 +363,7 @@
                 target.promise().done( function(){
                     setTimeout(function() {
                         $(element).fadeOut();
-                        if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                        if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                     }, animOpt.afterAnimationDelayTime);
                 })
             }, animOpt.delayTime);
@@ -376,7 +376,7 @@
         // UTILITIES
         
         var animationOpening = function(element,animOpt,elementClass) {
-            if (animOpt.preventScroll === true) $('body').css({'overflow':'hidden'});
+            if (animOpt.preventScroll === true) $('body').addClass('introLoader_preventScroll');
             var styleClass = 'theme-'+ animOpt.style;
             if (animOpt.fixed === false) {
                 $(element).addClass('absolute');
