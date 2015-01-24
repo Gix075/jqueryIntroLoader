@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.3.7
+ *  jQueryIntroLoader - v1.3.8
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -165,7 +165,7 @@
         var simpleLoaderAnimationExit = function() {
             
             var animOpt = plugin.settings.animation.options; 
-            animationExitEffect(animOpt,true);
+            animationExitEffect(animOpt,animOpt.delayTime,true);
             
         }
 
@@ -306,26 +306,25 @@
             $(element).addClass('introLoader '+ elementClass +' ' + styleClass);
         }// end of animationOpening()
         
-        var animationExitEffect = function(animOpt,stopSpin) {
+        var animationExitEffect = function(animOpt,delayTime,stopSpin) {
         
             setTimeout(function() {
                            
                 switch(animOpt.effect) {
-                        
                     case "fadeOut":
                         $(element).fadeOut(
                             animOpt.animationTime, 
                             animOpt.ease,
                             function() {
-                                if(stopSpin === true) $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter() // onAfter function
                             }
                         );
                         break;
 
                     case "slideUp":
-                        if(stopSpin === true) plugin.spinner.stop();
+                        plugin.spinner.stop();
                         $(element).animate(
                             {"bottom":$(window).height()},
                             animOpt.animationTime, 
@@ -333,14 +332,14 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
                         break;
 
                     case "slideDown":
-                        if(stopSpin === true) plugin.spinner.stop();
+                        plugin.spinner.stop();
                         $(element).animate(
                             {"top":$(window).height()},
                             animOpt.animationTime, 
@@ -348,14 +347,14 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
                         break;
 
                     case "slideLeft":
-                        if(stopSpin === true) plugin.spinner.stop();
+                        plugin.spinner.stop();
                         $(element).animate(
                             {"right":$(window).width(),"left":"-100%"},
                             animOpt.animationTime, 
@@ -363,14 +362,13 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
                         break; 
-                        
                     case "slideRight":
-                        if(stopSpin === true) plugin.spinner.stop();
+                        plugin.spinner.stop();
                         $(element).animate(
                             {"left":$(window).width(),"right":"-100%"},
                             animOpt.animationTime, 
@@ -378,7 +376,7 @@
                             function () {
                                 $(element).hide();
                                 $('#introLoaderSpinner').remove();
-                                if (animOpt.preventScroll === true) $('body').css({'overflow':'auto'});
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
@@ -389,7 +387,7 @@
                 }
                 
 
-            }, animOpt.delayTime);
+            }, delayTime);
         
         } // end of animationExit()
         
