@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.3.8
+ *  jQueryIntroLoader - v1.3.9
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -10,7 +10,6 @@
  *  
  *  BugReport/Assistence: https://github.com/Gix075/jqueryIntroLoader/issues
  */
-
 (function($) {
 
     $.introLoader = function(element, options) {
@@ -126,6 +125,11 @@
                     break;     
             }
             
+        }
+        
+        
+        plugin.destroy = function() {
+            $(element).removeData();
         }
 
         
