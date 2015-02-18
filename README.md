@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.3.9)
+jqueryIntroLoader (version 1.4.0)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -44,6 +44,10 @@ This plugin is very easy to install and use.
 
 *Read documentation to learn more about plugin options and use.*
 
+###Warning!
+From version 1.4.0 some option names are changed.<br>
+On official documentation page you can find a table with all changes.
+
 ###Documentation
 You can find an exaustive documentation on plugin home page<br> [http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php)
 
@@ -63,7 +67,13 @@ At now we provide 3 kind of animations and 7 color styles<br>
 This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
-###ChangeLogs
+###Last Updates
+**version 1.4.0**<br>
+*------------------*<br>
+Some option names was changed. <br>
+Read documentation to learn more about this changes.<br>
+[documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php).
+
 **version 1.3.9**<br>
 *------------------*<br>
 .destroy() method added. 
@@ -72,53 +82,5 @@ This plugin use some tird party software to do something during animations.<br>
 *------------------*<br>
 Body class assignment bug fixed.
 
-**version 1.3.7**<br>
-*------------------*<br>
-Some Javascript changes.
 
-**version 1.3.6**<br>
-*------------------*<br>
-"preventScroll" bug on iOS solved.
-
-**version 1.3.5**<br>
-*------------------*<br>
-New "preventScroll" option added to animation options group<br>
-See [documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php#prevent-scroll).
-
-**version 1.3.3**<br>
-*------------------*<br>
-Some CSS bugs solved
-
-**version 1.3.2**<br>
-*------------------*<br>
-New styles (*"ocean"* and *"forest"*) added for all animations<br> 
-New substyles "zebra" added for "doubleLoader" animation only.<br>
-LESS file added to the project<br>
-Some Javascript changes
-
-**version 1.3.0**<br>
-*------------------*<br>
-New animation *"lettersLoader"* added.
-
-**version 1.2.0**<br>
-*------------------*<br>
-New animation *"doubleLoader"* added.
-
-**version 1.1.3**<br>
-*------------------*<br>
-White colored background added to the loader<br>
-(prevent site visibility before plugin style assignment).
-
-**version 1.1.2**<br>
-*------------------*<br>
-CSS classes name changed<br>
-Spinner ID changed<br>
-Stylesheet cleaned
-
-**version 1.1.1**<br>
-*------------------*<br>
-Some bugs correction
-
-**version 1.1.0** <br>
-*------------------*<br>
-.stop() data method added (with 2 related new plugin options);
+[Complete Plugin Hystory](https://github.com/Gix075/jqueryIntroLoader/wiki).

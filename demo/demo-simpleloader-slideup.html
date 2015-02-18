@@ -22,7 +22,7 @@
         <h3>
             simpleLoader Animation <br>
             <small>
-            effect:'slideUp', ease: "easeOutSine", style: 'fluoYellow', delayTime: 1000, animationTime: 500, onBefore: function() {...}, onAfter: function() {...}
+            exitFx:'slideUp', ease: "easeOutSine", style: 'fluoYellow', delayBefore: 1000, exitTime: 500, onBefore: function() {...}, onAfter: function() {...}
             </small>
         </h3>
         <p>
@@ -56,11 +56,11 @@ $("#element").introLoader({
         animation: {
             name: 'simpleLoader',
             options: {
-                effect:'slideUp',
+                exitFx:'slideUp',
                 ease: "easeOutSine",
                 style: 'fluoYellow',
-                delayTime: 1000, //delay time in milliseconds
-                animationTime: 500,
+                delayBefore: 1000, //delay time in milliseconds
+                exitTime: 500,
                 onBefore: function() {
                     $('#onAfterExample').hide();
                 },
@@ -93,11 +93,11 @@ $("#element").introLoader({
                     animation: {
                         name: 'simpleLoader',
                         options: {
-                            effect:'slideUp',
+                            exitFx:'slideUp',
                             ease: "easeOutSine",
                             style: 'fluoYellow',
-                            delayTime: 1000, //delay time in milliseconds
-                            animationTime: 500,
+                            delayBefore: 1000, //delay time in milliseconds
+                            exitTime: 500,
                             onBefore: function() {
                                 $('#onAfterExample').hide();
                             },

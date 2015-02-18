@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.3.9
+ *  jQueryIntroLoader - v1.4.0
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -20,21 +20,34 @@
             animation: {
                 name: 'simpleLoader',
                 options: {
-                    effect:'fadeOut',
+				
+					/* Shared Options */
+					/* ----------------------------- */
+                    exitFx:'fadeOut', //OLD -> effect:'fadeOut'
                     ease: "linear",
                     style: 'light',
-                    delayTime: 500,
-                    animationTime: 300,
-                    progbarAnimationTime: 300, // "doubleLoader" animation only
-                    progbarDelayAfter: 300, // "doubleLoader" animation only
-                    loaderText: 'Website is Ready!', // "lettersLoader" animation only
-                    lettersDelayTime: 1, // "lettersLoader" animation only
-                    afterAnimationDelayTime: 0, // "lettersLoader" animation only
+					delayBefore: 500, //OLD -> delayTime: 500,
+					delayAfter: 300, //OLD -> afterAnimationDelayTime: 0,
+					exitTime: 300, //OLD -> animationTime: 300,
+					
+					/* "doubleLoader" animation only */
+					/* ----------------------------- */
+                    progbarTime: 300, //OLD -> progbarAnimationTime: 300
+                    progbarDelayAfter: 300, 
+					
+					/* "lettersLoader animation only */
+					/* ----------------------------- */
+                    loaderText: 'Website is Ready!',
+                    lettersDelayTime: 1,
+                    
+					/* "Globals Options */	
+					/* ----------------------------- */
                     preventScroll: false,
                     fixed: true,
                     stop: true,
                     onAfter: function(){},
                     onBefore: function(){}
+					
                 }
             },    
 
@@ -112,7 +125,6 @@
         */
         
         plugin.stop = function() {
-            //console.log('stop --> publicCalled '+plugin.settings.animation.name);
             switch(plugin.settings.animation.name) {
                 case "simpleLoader":
                     simpleLoaderAnimationExit();
@@ -142,7 +154,6 @@
         // ------------------------- simpleLoaderAnimation ----------------------------------
         
         var simpleLoaderAnimation = function(element,animOpt,spinOpt) {
-            //console.log('simpleLoaderAnimation --> privateCalled '+plugin.settings.animation.options.effect);
             
             // onBefore function 
             animOpt.onBefore();  
@@ -169,7 +180,7 @@
         var simpleLoaderAnimationExit = function() {
             
             var animOpt = plugin.settings.animation.options; 
-            animationExitEffect(animOpt,animOpt.delayTime,true);
+            animationExitEffect(animOpt,animOpt.delayBefore,true);
             
         }
 
@@ -207,19 +218,19 @@
                 
                 $(element).find('.doubleLoaderProgBar').find('span').animate(
                     {'width':'100%'},
-                    animOpt.progbarAnimationTime, 
+                    animOpt.progbarTime, 
                     animOpt.ease,
                     slidingDoorsVertical()
                 );
                 
-            }, animOpt.delayTime ); // end Timeout
+            }, animOpt.delayBefore ); // end Timeout
             
             function slidingDoorsVertical() {
                 setTimeout(function() {
                     $(element).find('.doubleLoaderProgBar').hide();
                     $(element).find('.doubleLoaderTop, .doubleLoaderBottom').animate(
                         {'height':0},
-                        animOpt.animationTime, 
+                        animOpt.exitTime, 
                         animOpt.ease,
                         function() {
                             $(element).hide();
@@ -227,7 +238,7 @@
                             animOpt.onAfter(); // onAfter function
                         }
                     );
-                }, animOpt.progbarAnimationTime + animOpt.progbarDelayAfter ); // end Timeout    
+                }, animOpt.progbarTime + animOpt.progbarDelayAfter ); // end Timeout    
             } // end slidingDoorsVertical()
         }
         
@@ -280,7 +291,7 @@
                         
                         $(self).animate(
                             {'opacity':1},
-                            animOpt.animationTime * (index + animOpt.lettersDelayTime) ,
+                            animOpt.exitTime * (index + animOpt.lettersDelayTime) ,
                             animOpt.ease
                         );
                         
@@ -289,9 +300,9 @@
                     setTimeout(function() {
                         $(element).fadeOut();
                         if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
-                    }, animOpt.afterAnimationDelayTime);
+                    }, animOpt.delayAfter);
                 })
-            }, animOpt.delayTime);
+            }, animOpt.delayBefore);
             
             
         }// end of lettersLoaderAnimationExit()
@@ -310,14 +321,14 @@
             $(element).addClass('introLoader '+ elementClass +' ' + styleClass);
         }// end of animationOpening()
         
-        var animationExitEffect = function(animOpt,delayTime,stopSpin) {
+        var animationExitEffect = function(animOpt,delayBefore,stopSpin) {
         
             setTimeout(function() {
                            
-                switch(animOpt.effect) {
+                switch(animOpt.exitFx) {
                     case "fadeOut":
                         $(element).fadeOut(
-                            animOpt.animationTime, 
+                            animOpt.exitTime, 
                             animOpt.ease,
                             function() {
                                 $('#introLoaderSpinner').remove();
@@ -331,7 +342,7 @@
                         plugin.spinner.stop();
                         $(element).animate(
                             {"bottom":$(window).height()},
-                            animOpt.animationTime, 
+                            animOpt.exitTime, 
                             animOpt.ease,
                             function () {
                                 $(element).hide();
@@ -346,7 +357,7 @@
                         plugin.spinner.stop();
                         $(element).animate(
                             {"top":$(window).height()},
-                            animOpt.animationTime, 
+                            animOpt.exitTime, 
                             animOpt.ease,
                             function () {
                                 $(element).hide();
@@ -361,7 +372,7 @@
                         plugin.spinner.stop();
                         $(element).animate(
                             {"right":$(window).width(),"left":"-100%"},
-                            animOpt.animationTime, 
+                            animOpt.exitTime, 
                             animOpt.ease,
                             function () {
                                 $(element).hide();
@@ -375,7 +386,7 @@
                         plugin.spinner.stop();
                         $(element).animate(
                             {"left":$(window).width(),"right":"-100%"},
-                            animOpt.animationTime, 
+                            animOpt.exitTime, 
                             animOpt.ease,
                             function () {
                                 $(element).hide();
@@ -391,7 +402,7 @@
                 }
                 
 
-            }, delayTime);
+            }, delayBefore);
         
         } // end of animationExit()
         
@@ -424,14 +435,16 @@
         return this.each(function() {
   
             if (undefined == $(this).data('introLoader')) {
+			
                 var plugin = new $.introLoader(this, options);
-                //console.log('PLUGIN');
                 $(this).data('introLoader', plugin);
                 
             }else{
+			
                 $(this).removeData('introLoader');
                 var plugin = new $.introLoader(this, options);
                 $(this).data('introLoader', plugin);
+				
             }
 
         });

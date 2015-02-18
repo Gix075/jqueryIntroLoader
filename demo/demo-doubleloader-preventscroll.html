@@ -26,7 +26,7 @@
         <div class="animDescription">
             <h2>Animation description</h2>
             <p>
-                This is a simple demo of jqueryIntroLoader using "doubleLoader" animation and <strong>"lockedBody"</strong> option setted on <strong>true</strong>.
+                This is a simple demo of jqueryIntroLoader using "doubleLoader" animation and <strong>"preventScroll"</strong> option setted on <strong>true</strong>.
             </p>
             
 <code><pre>
@@ -34,12 +34,12 @@ $("#element").introLoader({
     animation: {
         name: 'doubleLoader',
         options: {
-            effect:'fadeOut',
+            exitFx:'fadeOut',
             ease: "easeInOutCirc",
             style: 'ocean zebra',
-            delayTime: 500,
-            animationTime: 300,
-            progbarAnimationTime: 700,
+            delayBefore: 500,
+            exitTime: 300,
+            progbarTime: 700,
             progbarDelayAfter: 400,
             <strong>preventScroll: true</strong>
         }
@@ -156,12 +156,12 @@ $("#element").introLoader({
                     animation: {
                         name: 'doubleLoader',
                         options: {
-                            effect:'fadeOut',
+                            exitFx:'fadeOut',
                             ease: "easeInOutCirc",
                             style: 'ocean zebra',
-                            delayTime: 500,
-                            animationTime: 300,
-                            progbarAnimationTime: 700,
+                            delayBefore: 500,
+                            exitTime: 300,
+                            progbarTime: 700,
                             progbarDelayAfter: 400,
                             preventScroll: true
                         }

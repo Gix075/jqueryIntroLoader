@@ -47,14 +47,11 @@ $("#element").introLoader({
     animation: {
         name: 'simpleLoader',
         options: {
-            effect:'slideDown',
+            exitFx:'slideUp',
             ease: "easeInOutCirc",
-            style: 'fluoMagenta',
-            delayTime: 1000, //delay time in milliseconds
-            animationTime: 500,
-            onAfter: function() {alert('onAfter');}
+            style: 'dark'                           
         }
-    },
+    },  
     spinJs: {
         lines: 10, // The number of lines to draw
         length: 10, // The length of each line
@@ -94,7 +91,7 @@ $('#stopPlugin').on('click', function() {
 					animation: {
                         name: 'simpleLoader',
                         options: {
-                            effect:'slideUp',
+                            exitFx:'slideUp',
                             ease: "easeInOutCirc",
                             style: 'dark'                           
                         }

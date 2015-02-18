@@ -22,7 +22,7 @@
         <h3>
             simpleLoader Animation <br>
             <small>
-            effect:'slideRight', ease: "easeInOutCirc", style: 'ocean', delayTime: 1000, animationTime: 500
+            exitFx:'slideRight', ease: "easeInOutCirc", style: 'ocean', delayBefore: 1000, exitTime: 500
             </small>
         </h3>
         <p>
@@ -49,11 +49,11 @@ $("#element").introLoader({
     animation: {
         name: 'simpleLoader',
         options: {
-            effect:'slideRight',
+            exitFx:'slideRight',
             ease: "easeInOutCirc",
             style: 'ocean',
-            delayTime: 1000, //delay time in milliseconds
-            animationTime: 500
+            delayBefore: 1000, //delay time in milliseconds
+            exitTime: 500
         },
         spinJs: {
             lines: 13, // The number of lines to draw
@@ -78,11 +78,11 @@ $("#element").introLoader({
                     animation: {
                         name: 'simpleLoader',
                         options: {
-                            effect:'slideRight',
+                            exitFx:'slideRight',
                             ease: "easeInOutCirc",
                             style: 'ocean',
-                            delayTime: 1000, //delay time in milliseconds
-                            animationTime: 500
+                            delayBefore: 1000, //delay time in milliseconds
+                            exitTime: 500
                         }
                     },
                     spinJs: {

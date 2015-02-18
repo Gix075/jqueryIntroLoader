@@ -22,7 +22,7 @@
         <h3>
             simpleLoader Animation <br>
             <small>
-            effect:'slideBottom', ease: "easeInOutCirc", style: 'fluoMagenta', delayTime: 1000, animationTime: 500, onAfter: function() {...}
+            exitFx:'slideBottom', ease: "easeInOutCirc", style: 'fluoMagenta', delayBefore: 1000, exitTime: 500, onAfter: function() {...}
             </small>
         </h3>
         <p>
@@ -49,11 +49,11 @@ $("#element").introLoader({
     animation: {
         name: 'simpleLoader',
         options: {
-            effect:'slideDown',
+            exitFx:'slideDown',
             ease: "easeInOutCirc",
             style: 'fluoMagenta',
-            delayTime: 1000, //delay time in milliseconds
-            animationTime: 500,
+            delayBefore: 1000, //delay time in milliseconds
+            exitTime: 500,
             onAfter: function() {alert('onAfter');}
         }
     },
@@ -80,11 +80,11 @@ $("#element").introLoader({
                     animation: {
                         name: 'simpleLoader',
                         options: {
-                            effect:'slideDown',
+                            exitFx:'slideDown',
                             ease: "easeInOutCirc",
                             style: 'fluoMagenta',
-                            delayTime: 1000, //delay time in milliseconds
-                            animationTime: 500,
+                            delayBefore: 1000, //delay time in milliseconds
+                            exitTime: 500,
                             onAfter: function() {alert('onAfter');}
                         }
                     },

@@ -35,14 +35,13 @@ $(document).on('ready', function() {
         animation: {
             name: 'lettersLoader',
             options: {
-                effect:'fadeOut',
                 ease: "easeInOutCirc",
                 style: 'light',
-                delayTime: 500,
-                animationTime: 300,
+                delayBefore: 500,
+                delayAfter: 0, 
+                exitTime: 300,
                 loaderText: 'Page ready!', 
-                lettersDelayTime: 0, 
-                afterAnimationDelayTime: 0 
+                lettersDelayTime: 0
             }
         }
     });
@@ -59,14 +58,13 @@ $(document).on('ready', function() {
                     animation: {
                         name: 'lettersLoader',
                         options: {
-                            effect:'light',
                             ease: "easeInOutCirc",
-                            style: 'fluoYellow',
-                            delayTime: 500,
-                            animationTime: 300,
+                            style: 'light',
+                            delayBefore: 500,
+                            delayAfter: 0,
+                            exitTime: 300,
                             loaderText: 'Page ready!', 
-                            lettersDelayTime: 0, 
-                            afterAnimationDelayTime: 0 
+                            lettersDelayTime: 0
                         }
                     },
                     spinJs: {
