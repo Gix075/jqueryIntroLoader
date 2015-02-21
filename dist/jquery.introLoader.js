@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.4.1
+ *  jQueryIntroLoader - v1.4.2
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -21,27 +21,27 @@
                 name: 'simpleLoader',
                 options: {
 				
-					/* Shared Options */
-					/* ----------------------------- */
-                    exitFx:'fadeOut', //OLD -> effect:'fadeOut'
+                    /* Shared Options */
+                    /* ----------------------------- */
+                    exitFx:'fadeOut', //OLD -> exitFx:'fadeOut'
                     ease: "linear",
                     style: 'light',
-					delayBefore: 500, //OLD -> delayTime: 500,
-					delayAfter: 300, //OLD -> afterAnimationDelayTime: 0,
-					exitTime: 300, //OLD -> animationTime: 300,
-					
-					/* "doubleLoader" animation only */
-					/* ----------------------------- */
+                    delayBefore: 500, //OLD -> delayTime: 500,
+                    delayAfter: 300, //OLD -> afterAnimationDelayTime: 0,
+                    exitTime: 300, //OLD -> animationTime: 300,
+
+                    /* "doubleLoader" animation only */
+                    /* ----------------------------- */
                     progbarTime: 300, //OLD -> progbarAnimationTime: 300
                     progbarDelayAfter: 300, 
-					
-					/* "lettersLoader animation only */
-					/* ----------------------------- */
+
+                    /* "lettersLoader animation only */
+                    /* ----------------------------- */
                     loaderText: 'Website is Ready!',
                     lettersDelayTime: 1,
-                    
-					/* "Globals Options */	
-					/* ----------------------------- */
+
+                    /* "Globals Options */	
+                    /* ----------------------------- */
                     preventScroll: false,
                     fixed: true,
                     stop: true,
@@ -180,7 +180,7 @@
         var simpleLoaderAnimationExit = function() {
             
             var animOpt = plugin.settings.animation.options; 
-            animationExitEffect(animOpt,animOpt.delayBefore,true);
+            animationExitEffect(animOpt,true);
             
         }
 
@@ -321,17 +321,18 @@
             $(element).addClass('introLoader '+ elementClass +' ' + styleClass);
         }// end of animationOpening()
         
-        var animationExitEffect = function(animOpt,delayBefore,stopSpin) {
+        var animationExitEffect = function(animOpt,stopSpin) {
         
             setTimeout(function() {
                            
                 switch(animOpt.exitFx) {
+                        
                     case "fadeOut":
                         $(element).fadeOut(
                             animOpt.exitTime, 
                             animOpt.ease,
                             function() {
-                                $('#introLoaderSpinner').remove();
+                                if(stopSpin === true) $('#introLoaderSpinner').remove();
                                 if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                                 animOpt.onAfter() // onAfter function
                             }
@@ -339,7 +340,7 @@
                         break;
 
                     case "slideUp":
-                        plugin.spinner.stop();
+                        if(stopSpin === true) plugin.spinner.stop();
                         $(element).animate(
                             {"bottom":$(window).height()},
                             animOpt.exitTime, 
@@ -354,7 +355,7 @@
                         break;
 
                     case "slideDown":
-                        plugin.spinner.stop();
+                        if(stopSpin === true) plugin.spinner.stop();
                         $(element).animate(
                             {"top":$(window).height()},
                             animOpt.exitTime, 
@@ -369,7 +370,7 @@
                         break;
 
                     case "slideLeft":
-                        plugin.spinner.stop();
+                        if(stopSpin === true) plugin.spinner.stop();
                         $(element).animate(
                             {"right":$(window).width(),"left":"-100%"},
                             animOpt.exitTime, 
@@ -382,8 +383,9 @@
                             }
                         );
                         break; 
+                        
                     case "slideRight":
-                        plugin.spinner.stop();
+                        if(stopSpin === true) plugin.spinner.stop();
                         $(element).animate(
                             {"left":$(window).width(),"right":"-100%"},
                             animOpt.exitTime, 
@@ -402,9 +404,10 @@
                 }
                 
 
-            }, delayBefore);
+            }, animOpt.delayBefore);
         
         } // end of animationExit()
+        
         
         var stringSplitter = function(string, spanClass) {
             var str = string.split("");
