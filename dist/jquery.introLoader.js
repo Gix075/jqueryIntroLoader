@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.4.2
+ *  jQueryIntroLoader - v1.4.3
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -300,6 +300,7 @@
                     setTimeout(function() {
                         $(element).fadeOut();
                         if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
+                        animOpt.onAfter(); // onAfter function
                     }, animOpt.delayAfter);
                 })
             }, animOpt.delayBefore);
