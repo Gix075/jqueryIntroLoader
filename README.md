@@ -93,3 +93,4 @@ Body class assignment bug fixed.
 
 
 [Complete Plugin Hystory](https://github.com/Gix075/jqueryIntroLoader/wiki).
+
