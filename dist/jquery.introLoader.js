@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.4.3
+ *  jQueryIntroLoader - v1.4.4
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -151,6 +151,7 @@
             ================================================== 
         */
         
+       
         // ------------------------- simpleLoaderAnimation ----------------------------------
         
         var simpleLoaderAnimation = function(element,animOpt,spinOpt) {
@@ -235,9 +236,11 @@
                         function() {
                             $(element).hide();
                             if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
-                            animOpt.onAfter(); // onAfter function
                         }
                     );
+                    $('.doubleLoaderBottom').promise().done(function(){
+                        animOpt.onAfter(); // onAfter function
+                    });
                 }, animOpt.progbarTime + animOpt.progbarDelayAfter ); // end Timeout    
             } // end slidingDoorsVertical()
         }
