@@ -88,12 +88,128 @@ body.introLoader_preventScroll {
 	position: fixed;
 	width: 100%;
 	height: 100%;
+    margin: 0;
 	overflow: hidden;
 }
 
 /* ============================================================================== */ 
 /* Animations */
-/* ============================================================================== */ 
+/* ============================================================================== */
+
+/* *************************************************** */ 
+/* CounterLoader Animation */
+/* *************************************************** */ 
+.introLoader.counterLoader .counterLoaderBox {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+} 
+
+// counter sizes
+.small.introLoader.counterLoader .counterLoaderBox {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 0.8em;
+}
+
+.medium.introLoader.counterLoader .counterLoaderBox {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 2em;
+}
+
+.large.introLoader.counterLoader .counterLoaderBox {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    font-size: 3em;
+}
+
+// counter theme
+.circle.introLoader.counterLoader .counterLoaderBox {
+    border-radius: 50%;
+}
+
+
+/* CounterLoader Animation Colors */
+/* -------------------------------------------- */
+// colorset: light 
+.theme-light.introLoader.counterLoader  {
+    background-color: @cset-light-1;
+}
+
+.theme-light.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-light-2;
+}
+
+// colorset: dark 
+.theme-dark.introLoader.counterLoader  {
+    background-color: @cset-dark-1;
+}
+
+.theme-dark.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-dark-2;
+}
+
+// colorset: ocean 
+.theme-ocean.introLoader.counterLoader  {
+    background-color: @cset-ocean-1;
+}
+
+.theme-ocean.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-ocean-2;
+    color: @cset-ocean-3;
+}
+
+// colorset: forest 
+.theme-forest.introLoader.counterLoader  {
+    background-color: @cset-forest-1;
+}
+
+.theme-forest.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-forest-2;
+    color: @cset-forest-1;
+}
+
+// colorset: fluoGreen 
+.theme-fluoGreen.introLoader.counterLoader  {
+    background-color: @cset-fluoGreen-1;
+}
+
+.theme-fluoGreen.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-fluoGreen-2;
+    color: @cset-fluoGreen-1;
+}
+
+// colorset: fluoMagenta 
+.theme-fluoMagenta.introLoader.counterLoader  {
+    background-color: @cset-fluoMagenta-1;
+}
+
+.theme-fluoMagenta.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-fluoMagenta-2;
+    color: @cset-fluoMagenta-1;
+}
+
+// colorset: fluoYellow 
+.theme-fluoYellow.introLoader.counterLoader  {
+    background-color: @cset-fluoYellow-1;
+}
+
+.theme-fluoYellow.introLoader.counterLoader .counterLoaderBox {
+    background-color: @cset-fluoYellow-2;
+    color: @cset-fluoYellow-1;
+}
 
 /* *************************************************** */ 
 /* SimpleLoader Animation */

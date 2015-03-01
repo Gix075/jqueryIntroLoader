@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.4.5)
+jqueryIntroLoader (version 1.5.0)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -9,8 +9,9 @@ This plugin is very easy to install and use.
 [Home](http://factory.brainleaf.eu/jqueryIntroLoader) | 
 [Documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php) | [Demo](http://factory.brainleaf.eu/jqueryIntroLoader/demo)
 
-##Last Animation Update
-From version 1.4.5 on **"lettersLoader" animation** you can use all exit effects allowed by "simpleLoader" animation.<br>
+##Last Animation Updates
+- **New "counterLoader" Animation** added from **version 1.5.0**
+- From version 1.4.5 on *"lettersLoader" animation* you can use all exit effects (same allowed by "simpleLoader" animation).<br>
 
 
 ###Why use it?
@@ -61,16 +62,24 @@ Even though the css plugin is simple, use Less for the compilation of the CSS ma
 
 ###Available Animations and Styles
 At now we provide 3 kind of animations and 7 color styles<br>
-**Animations**: *simpleLoader* - *doubleLoader* - *lettersLoader*<br>
+**Animations**: *simpleLoader* - *doubleLoader* - *lettersLoader* - *counterLoader*<br>
 **Styles**: *light (default style)* - *dark* - *ocean* - *forest* - *fluoGreen* - *fluoMagenta* - *fluoYellow*
 
-**Warning**: *lettersLoader* animation is at beta version, but you can use it. I'm working to refine it.
+**Warning**: *lettersLoader* is an experimental animation. I'm working to refine it.
 
 ###Sofware incuded
 This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###Last Updates
+**version 1.5.0**<br>
+*------------------*<br>
+- New **"counterLoader"** animation added;<br>
+- Default exit effect optimized to prevent user errors during typing;
+- "delayAfter" default value changed to 0;
+- CSS properties changed for "preventScroll" option<br>
+*(before this fix body element had no css margin property setted on 0 value in prevent scroll mode)*
+
 **version 1.4.5**<br>
 *------------------*<br>
 Exit effects added on "letterLoader" animation.

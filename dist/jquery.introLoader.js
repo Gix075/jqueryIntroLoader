@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.4.5
+ *  jQueryIntroLoader - v1.5.0
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -23,17 +23,17 @@
 				
                     /* Shared Options */
                     /* ----------------------------- */
-                    exitFx:'fadeOut', //OLD -> exitFx:'fadeOut'
+                    exitFx:'fadeOut',
                     ease: "linear",
                     style: 'light',
-                    delayBefore: 500, //OLD -> delayTime: 500,
-                    delayAfter: 300, //OLD -> afterAnimationDelayTime: 0,
-                    exitTime: 300, //OLD -> animationTime: 300,
+                    delayBefore: 500, 
+                    delayAfter: 0,
+                    exitTime: 300, 
                     animationTime: 300,
                     
                     /* "doubleLoader" animation only */
                     /* ----------------------------- */
-                    progbarTime: 300, //OLD -> progbarAnimationTime: 300
+                    progbarTime: 300, 
                     progbarDelayAfter: 300, 
 
                     /* "lettersLoader animation only */
@@ -110,6 +110,10 @@
                     plugin.spinner = new Spinner(spinOpt).spin();
                     lettersLoaderAnimation(element,animOpt,spinOpt);
                     break;
+                case "counterLoader":
+                    plugin.spinner = new Spinner(spinOpt).spin();
+                    counterLoaderAnimation(element,animOpt,spinOpt);
+                    break;    
                 default:
                     plugin.spinner = new Spinner(spinOpt).spin();
                     simpleLoaderAnimation(element,animOpt,spinOpt);
@@ -126,6 +130,7 @@
         */
         
         plugin.stop = function() {
+            
             switch(plugin.settings.animation.name) {
                 case "simpleLoader":
                     simpleLoaderAnimationExit();
@@ -135,10 +140,13 @@
                     break;  
                 case "lettersLoader":
                     lettersLoaderAnimationExit();
-                    break;     
+                    break; 
+                case "counterLoader":
+                    counterLoaderAnimationExit();
+                    break;             
             }
             
-        }
+        } // end plugin.stop()
         
         
         plugin.destroy = function() {
@@ -151,6 +159,7 @@
             PRIVATES
             ================================================== 
         */
+        
         
        
         // ------------------------- simpleLoaderAnimation ----------------------------------
@@ -300,21 +309,72 @@
                         );
                         
                 });
+                
                 target.promise().done( function(){
-                    /*
-                    setTimeout(function() {
-                        $(element).fadeOut();
-                        if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
-                        animOpt.onAfter(); // onAfter function
-                    }, animOpt.delayAfter);*/
-                    console.log('done');
                     animOpt.delayBefore = animOpt.delayAfter; 
                     animationExitEffect(animOpt,false)
-                })
+                });
+                
             }, animOpt.delayBefore);
             
             
         }// end of lettersLoaderAnimationExit()
+        
+        // ----------------------------------------------------------------------------------
+        
+        
+        // ------------------------- counterLoaderAnimation ---------------------------------
+
+        var counterLoaderAnimation = function(element,animOpt) {
+            
+            // onBefore function 
+            animOpt.onBefore();  
+            animationOpening(element,animOpt,'counterLoader');
+            
+            var markup = '';
+                markup += '<div class="counterLoaderBox">';
+                markup += '   <span id="counterLoader" class="counterLoader number">0</span><span class="counterLoader percent">%</span>';
+                markup += '</div>';
+            
+            $(element).html(markup);
+            $(element).show();
+            
+            if (animOpt.stop === true) {
+                $(window).on('load', function() {
+                    counterLoaderAnimationExit();
+                });
+            }
+        
+        } // end of counterLoaderAnimation()
+        
+        var counterLoaderAnimationExit = function() {
+            
+            var animOpt = plugin.settings.animation.options; 
+            
+            setTimeout(function() {
+                
+                $(element).find('.counterLoaderBox').fadeIn();
+                $(element).find('.counterLoaderBox').promise().done(function() {
+                    jQuery({ Counter: 0 }).animate({ Counter: 100 }, 
+                    {
+                        duration: animOpt.animationTime,
+                        easing: 'swing',
+                        step: function () {
+                            $('#counterLoader').text(Math.ceil(this.Counter));
+                        },
+                        done: function(){
+                            animOpt.delayBefore = animOpt.delayAfter; 
+                            animationExitEffect(animOpt,false)
+                        }
+                    });
+                });
+                
+                
+            }, animOpt.delayBefore);
+            
+        } // end of counterLoaderAnimationExit()
+        
+        // ----------------------------------------------------------------------------------
         
         
         // ----------------------------------------------------------------------------------
@@ -406,9 +466,18 @@
                                 animOpt.onAfter(); // onAfter function
                             }
                         );
-                        break;    
+                        break;   
+                        
                     default:
-                        $(element).hide();
+                        $(element).fadeOut(
+                            animOpt.exitTime, 
+                            animOpt.ease,
+                            function() {
+                                if(stopSpin === true) $('#introLoaderSpinner').remove();
+                                if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
+                                animOpt.onAfter() // onAfter function
+                            }
+                        );
                         break;
                 }
                 
