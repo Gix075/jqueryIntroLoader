@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.4.4
+ *  jQueryIntroLoader - v1.4.5
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -29,7 +29,8 @@
                     delayBefore: 500, //OLD -> delayTime: 500,
                     delayAfter: 300, //OLD -> afterAnimationDelayTime: 0,
                     exitTime: 300, //OLD -> animationTime: 300,
-
+                    animationTime: 300,
+                    
                     /* "doubleLoader" animation only */
                     /* ----------------------------- */
                     progbarTime: 300, //OLD -> progbarAnimationTime: 300
@@ -294,17 +295,21 @@
                         
                         $(self).animate(
                             {'opacity':1},
-                            animOpt.exitTime * (index + animOpt.lettersDelayTime) ,
+                            animOpt.animationTime * (index + animOpt.lettersDelayTime) ,
                             animOpt.ease
                         );
                         
                 });
                 target.promise().done( function(){
+                    /*
                     setTimeout(function() {
                         $(element).fadeOut();
                         if (animOpt.preventScroll === true) $('body').removeClass('introLoader_preventScroll');
                         animOpt.onAfter(); // onAfter function
-                    }, animOpt.delayAfter);
+                    }, animOpt.delayAfter);*/
+                    console.log('done');
+                    animOpt.delayBefore = animOpt.delayAfter; 
+                    animationExitEffect(animOpt,false)
                 })
             }, animOpt.delayBefore);
             

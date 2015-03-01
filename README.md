@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.4.4)
+jqueryIntroLoader (version 1.4.5)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -8,6 +8,9 @@ This plugin is very easy to install and use.
 
 [Home](http://factory.brainleaf.eu/jqueryIntroLoader) | 
 [Documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php) | [Demo](http://factory.brainleaf.eu/jqueryIntroLoader/demo)
+
+##Last Animation Update
+From version 1.4.5 on **"lettersLoader" animation** you can use all exit effects allowed by "simpleLoader" animation.<br>
 
 
 ###Why use it?
@@ -68,9 +71,13 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###Last Updates
+**version 1.4.5**<br>
+*------------------*<br>
+Exit effects added on "letterLoader" animation.
+
 **version 1.4.4**<br>
 *------------------*<br>
-some javascript changes
+Some javascript changes
 
 **version 1.4.3**<br>
 *------------------*<br>
