@@ -1,0 +1,36 @@
+{
+  "name": "introloader",
+  "description": "a jQuery plugin for generate animated Intro Loading Pages",
+  "version": "1.5.0",
+  "keywords": [
+        "jquery",
+        "plugin",
+        "ajax",
+        "loader",
+        "intro",
+        "animation",
+        "animate",
+        "spin",
+        "spinner",
+        "introloader",
+        "less",
+        "mobile-first",
+        "responsive",
+        "front-end",
+        "web"
+  ],
+  "homepage": "http://factory.brainleaf.eu/jqueryIntroLoader",
+  "main": [
+        "dist/css/introLoader.css",
+        "dist/css/introLoader.min.css",
+        "dist/css/introLoader.less",
+        "dist/helpers/jquery.easing.1.3.js",
+        "dist/helpers/spin.min.js",
+        "dist/jquery.introLoader.js",
+        "dist/jquery.introLoader.min.js",
+        "dist/jquery.introLoader.pack.min.js"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  }
+}

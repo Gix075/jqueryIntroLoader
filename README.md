@@ -9,11 +9,6 @@ This plugin is very easy to install and use.
 [Home](http://factory.brainleaf.eu/jqueryIntroLoader) | 
 [Documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php) | [Demo](http://factory.brainleaf.eu/jqueryIntroLoader/demo)
 
-##Last Animation Updates
-- **New "counterLoader" Animation** added from **version 1.5.0**
-- From version 1.4.5 on *"lettersLoader" animation* you can use all exit effects (same allowed by "simpleLoader" animation).<br>
-
-
 ###Why use it?
 
 - It's cool!
@@ -23,6 +18,18 @@ This plugin is very easy to install and use.
 - It's simple to use!
 - You don't need to know jQuery to obtain cool animations!
 - It's perfect for jQuery beginners!
+
+
+##Last Animation Updates
+- **New "counterLoader" Animation** added from **version 1.5.0**
+- From version 1.4.5 on *"lettersLoader" animation* you can use all exit effects (same allowed by "simpleLoader" animation).<br>
+
+## Install using Bower
+From **version 1.5.0** you can install and add *jqueryIntroLoader* using  **[Bower](http://bower.io/)**
+```
+$ bower install introloader --save
+```
+
 
 ###Use
 
