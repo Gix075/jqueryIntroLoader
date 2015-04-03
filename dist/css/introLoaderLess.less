@@ -97,6 +97,133 @@ body.introLoader_preventScroll {
 /* ============================================================================== */
 
 /* *************************************************** */ 
+/* SimpleLoader Animation */
+/* *************************************************** */ 
+
+.absolute.introLoader.simpleLoader {
+    position: absolute;
+}
+
+/* SimpleLoader Animation Colors */
+/* -------------------------------------------- */
+// colorset: light 
+.theme-light.introLoader.simpleLoader {
+    background-color: @cset-light-1;
+}
+// colorset: dark 
+.theme-dark.introLoader.simpleLoader {
+    background-color: @cset-dark-1;
+}
+// colorset: ocean 
+.theme-ocean.introLoader.simpleLoader {
+    background-color: @cset-ocean-1;
+}
+// colorset: forest 
+.theme-forest.introLoader.simpleLoader {
+    background-color: @cset-forest-1;
+}
+// colorset: fluoGreen
+.theme-fluoGreen.introLoader.simpleLoader {
+    background-color: @cset-fluoGreen-1;
+}
+// colorset: fluoMagenta 
+.theme-fluoMagenta.introLoader.simpleLoader {
+    background-color: @cset-fluoMagenta-1;
+}
+// colorset: fluoYellow 
+.theme-fluoYellow.introLoader.simpleLoader {
+    background-color: @cset-fluoYellow-1;
+}
+
+
+/* *************************************************** */ 
+/* GifLoader Animation */
+/* *************************************************** */ 
+
+.introLoader.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_light.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.introLoader.gifLoader .gifLoaderInnerCustom {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.introLoader.gifLoader .gifLoaderInner,
+.introLoader.gifLoader .gifLoaderInnerCustom {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.theme-light.gifLoader .gifLoaderInner {
+    background-color: @cset-light-1;
+}
+
+.theme-dark.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_dark.gif);
+    background-color: @cset-dark-1;
+}
+
+.theme-ocean.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_ocean.gif);
+    background-color: @cset-ocean-1;
+}
+
+.theme-forest.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_forest.gif);
+    background-color: @cset-forest-1;
+}
+
+.theme-fluoGreen.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_fluoGreen.gif);
+    background-color: @cset-fluoGreen-1;
+}
+
+.theme-fluoYellow.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_fluoYellow.gif);
+    background-color: @cset-fluoYellow-1;
+}
+
+.theme-fluoMagenta.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-simple_fluoMagenta.gif);
+    background-color: @cset-fluoMagenta-1;
+}
+
+.theme-light.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_light.gif);
+}
+
+.theme-dark.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_dark.gif);
+}
+
+.theme-ocean.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_ocean.gif);
+}
+
+.theme-forest.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_forest.gif);
+}
+
+.theme-fluoGreen.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_fluoGreen.gif);
+}
+
+.theme-fluoYellow.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_fluoYellow.gif);
+}
+
+.theme-fluoMagenta.bubble.gifLoader .gifLoaderInner {
+    background-image: url(spinners/circle-bub_fluoMagenta.gif);
+}
+
+/* *************************************************** */ 
 /* CounterLoader Animation */
 /* *************************************************** */ 
 .introLoader.counterLoader .counterLoaderBox {
@@ -209,45 +336,6 @@ body.introLoader_preventScroll {
 .theme-fluoYellow.introLoader.counterLoader .counterLoaderBox {
     background-color: @cset-fluoYellow-2;
     color: @cset-fluoYellow-1;
-}
-
-/* *************************************************** */ 
-/* SimpleLoader Animation */
-/* *************************************************** */ 
-
-.absolute.introLoader.simpleLoader {
-    position: absolute;
-}
-
-/* SimpleLoader Animation Colors */
-/* -------------------------------------------- */
-// colorset: light 
-.theme-light.introLoader.simpleLoader {
-    background-color: @cset-light-1;
-}
-// colorset: dark 
-.theme-dark.introLoader.simpleLoader {
-    background-color: @cset-dark-1;
-}
-// colorset: ocean 
-.theme-ocean.introLoader.simpleLoader {
-    background-color: @cset-ocean-1;
-}
-// colorset: forest 
-.theme-forest.introLoader.simpleLoader {
-    background-color: @cset-forest-1;
-}
-// colorset: fluoGreen
-.theme-fluoGreen.introLoader.simpleLoader {
-    background-color: @cset-fluoGreen-1;
-}
-// colorset: fluoMagenta 
-.theme-fluoMagenta.introLoader.simpleLoader {
-    background-color: @cset-fluoMagenta-1;
-}
-// colorset: fluoYellow 
-.theme-fluoYellow.introLoader.simpleLoader {
-    background-color: @cset-fluoYellow-1;
 }
 
 /* *************************************************** */ 
@@ -525,27 +613,3 @@ body.introLoader_preventScroll {
     color: @cset-fluoMagenta-2;
 }
 
-
-/* *************************************************** */ 
-/* Quads Animation */
-/* *************************************************** */ 
-
-.quadsLoader__area {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
-
-.quadsLoader__row {
-    overflow: auto;
-}
-
-.quadsLoader__quad {
-    position: relative;
-    float: left;
-}
-
-.quadsLoader__quad-inner {
-    background: rgb(51, 51, 51);
-    position: absolute;
-}

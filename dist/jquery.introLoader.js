@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.5.0
+ *  jQueryIntroLoader - v1.6.0
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -23,18 +23,21 @@
 				
                     /* Shared Options */
                     /* ----------------------------- */
-                    exitFx:'fadeOut',
-                    ease: "linear",
+                    exitFx: 'fadeOut',
+                    ease: 'linear',
                     style: 'light',
-                    delayBefore: 500, 
+                    delayBefore: 500,
                     delayAfter: 0,
-                    exitTime: 300, 
+                    exitTime: 300,
                     animationTime: 300,
+                    
+                    customGif: false,
+                    customGifBgColor: false,
                     
                     /* "doubleLoader" animation only */
                     /* ----------------------------- */
-                    progbarTime: 300, 
-                    progbarDelayAfter: 300, 
+                    progbarTime: 300,
+                    progbarDelayAfter: 300,
 
                     /* "lettersLoader animation only */
                     /* ----------------------------- */
@@ -113,7 +116,10 @@
                 case "counterLoader":
                     plugin.spinner = new Spinner(spinOpt).spin();
                     counterLoaderAnimation(element,animOpt,spinOpt);
-                    break;    
+                    break; 
+                case "gifLoader":
+                    gifLoaderAnimation(element,animOpt);
+                    break;      
                 default:
                     plugin.spinner = new Spinner(spinOpt).spin();
                     simpleLoaderAnimation(element,animOpt,spinOpt);
@@ -143,7 +149,10 @@
                     break; 
                 case "counterLoader":
                     counterLoaderAnimationExit();
-                    break;             
+                    break;    
+                case "gifLoader":
+                    gifLoaderAnimationExit();
+                    break;    
             }
             
         } // end plugin.stop()
@@ -160,6 +169,46 @@
             ================================================== 
         */
         
+        // ------------------------- gifLoaderAnimation ----------------------------------
+        var gifLoaderAnimation = function(element,animOpt) {
+            
+            // onBefore function 
+            animOpt.onBefore();  
+            animationOpening(element,animOpt,'gifLoader');
+            
+            var cssStyle = "";
+            if (animOpt.customGif != false && animOpt.customGif != '') {
+                var elementInnerClass = 'gifLoaderInnerCustom';
+                cssStyle = 'background-image: url('+animOpt.customGif+');'
+            }else{
+                var elementInnerClass = 'gifLoaderInner';
+            }
+            
+            cssStyle += (animOpt.customGif != false && animOpt.customGif != '' && animOpt.customGifBgColor != false && animOpt.customGifBgColor != "") ? 'background-color:'+animOpt.customGifBgColor+';' : '';
+            
+            var markup  = '';
+                markup += '<div id="introLoaderSpinner" class="gifLoaderInner" style="'+cssStyle+'">';
+                markup += '</div>';
+            
+            $(element).html(markup);
+            $(element).show();
+            
+            if (animOpt.stop === true) {
+                $(window).on('load', function() {
+                    gifLoaderAnimationExit();
+                });
+            }
+        }
+        
+        
+        var gifLoaderAnimationExit = function() {
+            
+            var animOpt = plugin.settings.animation.options; 
+            animationExitEffect(animOpt,false);
+            
+        }
+        
+        // ----------------------------------------------------------------------------------
         
        
         // ------------------------- simpleLoaderAnimation ----------------------------------

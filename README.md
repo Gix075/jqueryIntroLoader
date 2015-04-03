@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.5.0)
+jqueryIntroLoader (version 1.6.0)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -19,8 +19,8 @@ This plugin is very easy to install and use.
 - You don't need to know jQuery to obtain cool animations!
 - It's perfect for jQuery beginners!
 
-
 ##Last Animation Updates
+- **New "gifLoader" Animation** added from **version 1.6.0**
 - **New "counterLoader" Animation** added from **version 1.5.0**
 - From version 1.4.5 on *"lettersLoader" animation* you can use all exit effects (same allowed by "simpleLoader" animation).<br>
 
@@ -79,6 +79,10 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###Last Updates
+**version 1.6.0**<br>
+*------------------*<br>
+- **New "gifLoader" Animation** added
+
 **version 1.5.0**<br>
 *------------------*<br>
 - New **"counterLoader"** animation added;<br>
