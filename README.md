@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.7.0)
+jqueryIntroLoader (version 1.7.1)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.

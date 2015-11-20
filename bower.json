@@ -1,7 +1,7 @@
 {
   "name": "introloader",
   "description": "a jQuery plugin for generate animated Intro Loading Pages",
-  "version": "1.6.2",
+  "version": "1.7.1",
   "keywords": [
         "jquery",
         "plugin",
