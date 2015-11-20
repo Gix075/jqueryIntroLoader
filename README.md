@@ -80,6 +80,11 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###Last Updates
+**version 1.7.1**<br>
+*------------------*<br>
+- css bug fixed on cssLoader animation
+
+###Last Updates
 **version 1.7.0**<br>
 *------------------*<br>
 - **cssLoader** animation added
