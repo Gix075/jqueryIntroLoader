@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery IntroLoader Demo</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
+        <link href="demo.css" rel="stylesheet">
+        
+        <!-- PLUGIN INCLUSION  ------------------------------------- -->
+        <!-- css -->
+        <link href="../dist/css/introLoader.css" rel="stylesheet">
+		<!-- jQuery, Helpers and jqueryIntrLoader -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../dist/helpers/jquery.easing.1.3.js"></script>
+        <script src="../dist/helpers/spin.min.js"></script>
+        <script src="../dist/jquery.introLoader.js"></script>
+        <!-- -------------------------------------------------------- -->
+
+	</head>
+	<body>
+		<div id="element" class="introLoading"></div>
+        <h1>jqueryIntroLoader demopage</h1>
+        <h3>
+            cssLoader Animation <br>
+            <small>
+            exitFx:'slideUp', ease: "easeOutSine", style: 'fluoYellow', delayBefore: 1000, exitTime: 500
+            </small>
+        </h3>
+        <p>
+            <a href="index.html" class="button backtoindex" title="Default Options Demo">Back to Demos Index</a>
+        </p>
+        
+        <p>
+            See page code to learn more!
+        </p>
+
+        
+        <div class="animDescription">
+            <h2>Animation description</h2>
+            <p>
+                cssLoader Animation <br>
+                <small>
+                effect:'slideUp', ease: "easeOutSine", style: 'light', delayTime: 1000, animationTime: 500
+                </small>
+            </p>
+            
+            
+<code><pre>
+$("#element").introLoader({
+
+    $("#element").introLoader({
+
+        animation: {
+            name: 'cssLoader',
+            options: {
+                exitFx:'slideUp',
+                ease: "easeOutSine",
+                style: 'light',
+                delayBefore: 1000, //delay time in milliseconds
+                exitTime: 500
+            }
+        }
+
+    });
+
+});
+</pre></code>
+               
+            
+        </div>
+        
+        
+		<script>
+			$(document).on('ready', function() {
+                
+				$("#element").introLoader({
+
+                    animation: {
+                        name: 'cssLoader',
+                        options: {
+                            exitFx:'slideUp',
+                            ease: "easeOutSine",
+                            style: 'light',
+                            delayBefore: 1000, //delay time in milliseconds
+                            exitTime: 500
+                        }
+                    }
+
+                });
+                
+            });
+		</script>
+                
+	</body>
+</html>

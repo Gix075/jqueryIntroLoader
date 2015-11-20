@@ -97,6 +97,218 @@ body.introLoader_preventScroll {
 /* ============================================================================== */
 
 /* *************************************************** */ 
+/* CSSLoader Animation */
+/* *************************************************** */ 
+.introLoader.cssLoader {
+    
+    .cssLoaderSpinner {
+        position: absolute;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        margin: -25px 0 0 -25px;
+        border: 5px solid transparent;
+        border-radius: 50%;
+        .cssLoaderSpinner-inner {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            left: -5px;
+            border-radius: 50%;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent;
+            border-radius: 50%;
+            animation: infinite-spinning 1s infinite;
+        }
+    }
+    
+}
+
+
+/* CSSLoader Animation Spinner Sizes */
+/* -------------------------------------------- */
+
+.introLoader.cssLoader.medium { 
+    .cssLoaderSpinner {
+        border: 5px solid transparent;
+        .cssLoaderSpinner-inner {
+            top: -6px;
+            right: -6px;
+            bottom: -6px;
+            left: -6px;
+            border-width: 6px;
+        }
+    } 
+}
+
+.introLoader.cssLoader.large { 
+    .cssLoaderSpinner {
+        border: 5px solid transparent;
+        .cssLoaderSpinner-inner {
+            top: -6px;
+            right: -6px;
+            bottom: -6px;
+            left: -6px;
+            border-width: 8px;
+        }
+    } 
+}
+
+/* CSSLoader Animation Keyframes */
+/* -------------------------------------------- */
+@keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes infinite-spinning {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/* CSSLoader Animation Colors */
+/* -------------------------------------------- */
+// colorset: light 
+.theme-light.introLoader.cssLoader {
+    background-color: @cset-light-1;
+    .cssLoaderSpinner {
+        border-color: @cset-light-4;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-light-3 transparent transparent transparent;
+        }
+    }
+}
+// colorset: dark 
+.theme-dark.introLoader.cssLoader {
+    background-color: @cset-dark-1;
+    .cssLoaderSpinner {
+        border-color: @cset-dark-4;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-dark-2 transparent transparent transparent;
+        }
+    }
+}
+// colorset: ocean 
+.theme-ocean.introLoader.cssLoader {
+    background-color: @cset-ocean-1;
+    .cssLoaderSpinner {
+        border-color: @cset-ocean-4;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-ocean-3 transparent transparent transparent;
+        }
+    }
+}
+// colorset: forest 
+.theme-forest.introLoader.cssLoader {
+    background-color: @cset-forest-1;
+    .cssLoaderSpinner {
+        border-color: @cset-forest-2;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-forest-3 transparent transparent transparent;
+        }
+    }
+}
+// colorset: fluoGreen
+.theme-fluoGreen.introLoader.cssLoader {
+    background-color: @cset-fluoGreen-1;
+    .cssLoaderSpinner {
+        border-color: @cset-fluoGreen-4;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-fluoGreen-3 transparent transparent transparent;
+        }
+    }
+}
+// colorset: fluoMagenta 
+.theme-fluoMagenta.introLoader.cssLoader {
+    background-color: @cset-fluoMagenta-1;
+    .cssLoaderSpinner {
+        border-color: @cset-fluoMagenta-4;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-fluoMagenta-3 transparent transparent transparent;
+        }
+    }
+}
+// colorset: fluoYellow 
+.theme-fluoYellow.introLoader.cssLoader {
+    background-color: @cset-fluoYellow-1;
+    .cssLoaderSpinner {
+        border-color: @cset-fluoYellow-4;
+        .cssLoaderSpinner-inner {
+            border-color: @cset-fluoYellow-3 transparent transparent transparent;
+        }
+    }
+}
+
+// colorset: light halfcircle 
+.theme-light.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-light-3 @cset-light-3 transparent transparent;
+        }
+    }
+}
+// colorset: dark halfcircle 
+.theme-dark.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-dark-2 @cset-dark-2 transparent transparent;
+        }
+    }
+}
+// colorset: ocean halfcircle 
+.theme-ocean.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-ocean-3 @cset-ocean-3 transparent transparent;
+        }
+    }
+}
+// colorset: forest halfcircle 
+.theme-forest.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-forest-3 @cset-forest-3 transparent transparent;
+        }
+    }
+}
+// colorset: fluoGreen halfcircle 
+.theme-fluoGreen.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-fluoGreen-3 @cset-fluoGreen-3 transparent transparent;
+        }
+    }
+}
+// colorset: fluoMagenta halfcircle 
+.theme-fluoMagenta.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-fluoMagenta-3 @cset-fluoMagenta-3 transparent transparent;
+        }
+    }
+}
+// colorset: fluoYellow halfcircle 
+.theme-fluoYellow.halfcircle.introLoader.cssLoader {
+    .cssLoaderSpinner {
+        .cssLoaderSpinner-inner {
+            border-color: @cset-fluoYellow-3 @cset-fluoYellow-3 transparent transparent;
+        }
+    }
+}
+/* *************************************************** */ 
 /* SimpleLoader Animation */
 /* *************************************************** */ 
 

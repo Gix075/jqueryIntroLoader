@@ -1,4 +1,4 @@
-jqueryIntroLoader (version 1.6.2)
+jqueryIntroLoader (version 1.7.0)
 ===================================
 
 a jQuery plugin for generate animated Intro Loading Pages.
@@ -20,6 +20,7 @@ This plugin is very easy to install and use.
 - It's perfect for jQuery beginners!
 
 ##Last Animation Updates
+- **New "cssLoader" Animation** added from **version 1.7.0**
 - **New "gifLoader" Animation** added from **version 1.6.0**
 - **New "counterLoader" Animation** added from **version 1.5.0**
 - From version 1.4.5 on *"lettersLoader" animation* you can use all exit effects (same allowed by "simpleLoader" animation).<br>
@@ -68,8 +69,8 @@ This file allow you to modify easly and quickly the animations' styles and color
 Even though the css plugin is simple, use Less for the compilation of the CSS makes work easier.
 
 ###Available Animations and Styles
-At now we provide 3 kind of animations and 7 color styles<br>
-**Animations**: *simpleLoader* - *doubleLoader* - *lettersLoader* - *counterLoader*<br>
+At now we provide 6 kind of animations and 7 color styles<br>
+**Animations**: *simpleLoader* - *cssLoader* - *gifLoader* - *doubleLoader* - *lettersLoader* - *counterLoader*<br>
 **Styles**: *light (default style)* - *dark* - *ocean* - *forest* - *fluoGreen* - *fluoMagenta* - *fluoYellow*
 
 **Warning**: *lettersLoader* is an experimental animation. I'm working to refine it.
@@ -79,6 +80,10 @@ This plugin use some tird party software to do something during animations.<br>
 [SpinJs](fgnass.github.io/spin.js/) and [jQueryEasing](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ###Last Updates
+**version 1.7.0**<br>
+*------------------*<br>
+- **cssLoader** animation added
+
 **version 1.6.2**<br>
 *------------------*<br>
 - Some little changes on demo files
@@ -90,44 +95,6 @@ This plugin use some tird party software to do something during animations.<br>
 **version 1.6.0**<br>
 *------------------*<br>
 - **New "gifLoader" Animation** added
-
-**version 1.5.0**<br>
-*------------------*<br>
-- New **"counterLoader"** animation added;<br>
-- Default exit effect optimized to prevent user errors during typing;
-- "delayAfter" default value changed to 0;
-- CSS properties changed for "preventScroll" option<br>
-*(before this fix body element had no css margin property setted on 0 value in prevent scroll mode)*
-
-**version 1.4.5**<br>
-*------------------*<br>
-Exit effects added on "letterLoader" animation.
-
-**version 1.4.4**<br>
-*------------------*<br>
-Some javascript changes
-
-**version 1.4.3**<br>
-*------------------*<br>
-onAfter function bug fixed on "lettersLoader" animation.<br>
-
-**version 1.4.2**<br>
-*------------------*<br>
-Some javascript bugs fixed.<br>
-
-**version 1.4.1**<br>
-*------------------*<br>
-z-index css property setted on value 9999.<br>
-
-**version 1.4.0**<br>
-*------------------*<br>
-Some option names was changed. <br>
-Read documentation to learn more about this changes.<br>
-[documentation](http://factory.brainleaf.eu/jqueryIntroLoader/documentation.php).
-
-**version 1.3.9**<br>
-*------------------*<br>
-.destroy() method added. 
 
 
 [Complete Plugin Hystory](https://github.com/Gix075/jqueryIntroLoader/wiki).

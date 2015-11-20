@@ -1,5 +1,5 @@
 /*
- *  jQueryIntroLoader - v1.6.2
+ *  jQueryIntroLoader - v1.7.0
  *  "simple intro loader animations"
  *  http://factory.brainleaf.eu/jqueryIntroLoader
  *
@@ -31,6 +31,8 @@
                     exitTime: 300,
                     animationTime: 300,
                     
+                    /* "gifLoader" animation only */
+                    /* ----------------------------- */
                     customGif: false,
                     customGifBgColor: false,
                     
@@ -119,7 +121,10 @@
                     break; 
                 case "gifLoader":
                     gifLoaderAnimation(element,animOpt);
-                    break;      
+                    break; 
+                case "cssLoader":
+                    cssLoaderAnimation(element,animOpt);
+                    break; 
                 default:
                     plugin.spinner = new Spinner(spinOpt).spin();
                     simpleLoaderAnimation(element,animOpt,spinOpt);
@@ -152,7 +157,10 @@
                     break;    
                 case "gifLoader":
                     gifLoaderAnimationExit();
-                    break;    
+                    break; 
+                case "cssLoader":
+                    cssLoaderAnimationExit();
+                    break; 
             }
             
         } // end plugin.stop()
@@ -168,6 +176,34 @@
             PRIVATES
             ================================================== 
         */
+        
+        // ------------------------- cssLoaderAnimation ----------------------------------
+        var cssLoaderAnimation = function(element,animOpt) {
+            
+            // onBefore function 
+            animOpt.onBefore();  
+            animationOpening(element,animOpt,'cssLoader');
+            
+            var loaderMarkup = '';
+                loaderMarkup += '<div class="cssLoaderSpinner">';
+                loaderMarkup += '   <div class="cssLoaderSpinner-inner"></div>';
+                loaderMarkup += '</div>';
+            
+            $(element).html(loaderMarkup);
+            $(element).show();
+            
+            if (animOpt.stop === true) {
+                $(window).on('load', function() {
+                    cssLoaderAnimationExit();
+                });
+            }
+            
+        }
+        
+        var cssLoaderAnimationExit = function() {    
+            var animOpt = plugin.settings.animation.options; 
+            animationExitEffect(animOpt,false); 
+        }
         
         // ------------------------- gifLoaderAnimation ----------------------------------
         var gifLoaderAnimation = function(element,animOpt) {
